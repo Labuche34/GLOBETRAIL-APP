@@ -13,7 +13,7 @@ class TravelsController < ApplicationController
     if @travel.save
       redirect_to travel_path(@travel)
     else
-      puts "Wrong entries, your travel hasn't been create"
+      puts "Wrong entries, your travel hasn't been created"
       render :new, status: :unprocessable_entity
     end
   end

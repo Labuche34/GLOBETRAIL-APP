@@ -1,5 +1,32 @@
-<ul>
-  <% @travels.each do |travel| %>
-    <li><%= travel.country %></li>
-  <% end %>
-</ul>
+<div class="page-container">
+  <div class="row text-center my-3" id="header">
+    <h1>Explore the World, One Trip at a Time</h1>
+    <p>Your Travel Bucket List Starts Here! 🌍🧳✈️</p>
+  </div>
+
+  <div class="content-container">
+    <div class="travels-container">
+      <% @travels.each do |travel| %>
+        <div class="travel-card">
+          <img src="https://media.istockphoto.com/id/1954635163/fr/photo/vue-a%C3%A9rienne-dune-plage-sereine-avec-des-collines-verdoyantes-un-ciel-bleu-clair-et-des.jpg?s=612x612&w=0&k=20&c=uSREwQdBb5IWhEi9swM8PpmNXajM54GAxuuVU6m4ZCI=">
+          <div class="travel-card-infos">
+            <h2 style="font-size: 16px; font-weight: bold; margin: 0; color: #219ebc;">
+              <%= travel.country %>
+            </h2>
+            <div class="travel-infos">
+              <p>
+                Number of travellers: <%= travel.number_of_travellers %><br>
+                Trip duration: <%= travel.trip_duration %> days<br>
+                Maximum budget: <%= travel.budget %> €
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row m-3 link">
+      <%= link_to "Add a new travel", new_travel_path, class: "btn btn-primary link-btn", style: "text-decoration: none;" %>
+    </div>
+  </div>
+</div>
