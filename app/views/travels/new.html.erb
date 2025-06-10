@@ -1,0 +1,9 @@
+<%# <%= simple_form_for @travel do |f| %>
+  <%# <%= f.input country: "Choose your destination country" %>
+<%# <% end %>
+
+<%= simple_form_for @travel do |f| %>
+  <%= f.input :country %>
+  <%= f.input :number_of_travellers %>
+  <%= f.button :submit %>
+<% end %>
