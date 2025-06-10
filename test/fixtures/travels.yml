@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  number_of_travellers: 1
+  budget: 1.5
+  trip_duration: 1
+  departure_city: MyString
+  travellers_type: MyString
+  user: one
+
+two:
+  country: MyString
+  number_of_travellers: 1
+  budget: 1.5
+  trip_duration: 1
+  departure_city: MyString
+  travellers_type: MyString
+  user: two
