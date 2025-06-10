@@ -5,11 +5,11 @@ class TravelsController < ApplicationController
   end
 
   def new
-    @travel = Travel.new(params[:travel_id])
+    @travel = Travel.new
   end
 
   def create
-    @travel = Travel.new(params[:travel_id])
+    @travel = Travel.new(travel_params)
     if @travel.save
       redirect_to travel_path(@travel)
     else
@@ -21,6 +21,6 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:country, :number_of_travellers, :budget, :departure_city)
+    params.require(:travel).permit(:country, :number_of_travellers, :budget, :trip_duration, :departure_city, :travellers_type)
   end
 end
