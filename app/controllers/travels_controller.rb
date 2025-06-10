@@ -1,4 +1,9 @@
 class TravelsController < ApplicationController
+
+  def index
+    @travels = Travel.all
+  end
+
   def new
     @travel = Travel.new(params[:travel_id])
   end
@@ -10,6 +15,7 @@ class TravelsController < ApplicationController
     else
       puts "Wrong entries, your travel hasn't been create"
       render :new, status: :unprocessable_entity
+    end
   end
 
   private
