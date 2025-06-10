@@ -12,5 +12,12 @@
 
   <body>
     <%= yield %>
+    <nav>
+      <div class="navbar">
+        <a href="#">MY TRAVELS</a>
+        <%= image_tag("logo", alt: "Logo du site", class: "logo", width: 45, height: 45) %>
+        <a href="#">ASK EXPLOREO</a>
+      </div>
+    </nav>
   </body>
 </html>

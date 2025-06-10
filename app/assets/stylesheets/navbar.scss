@@ -1,0 +1,66 @@
+// Variables couleurs
+$primary: #219ebc;
+$secondary: #fb8500;
+$third: #006c86;
+$text: #ffffff;
+
+nav {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $primary;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 56px;
+
+    a {
+      color: $text;
+      font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      padding: 0.7em 0.7rem;
+      margin: auto;
+      font-size: 4vw;
+      border-radius: 4px;
+      min-width: 44px;
+      min-height: 44px;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+
+      &:hover,
+      &:focus {
+        background: $third;
+        color: $secondary;
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+
+      &:focus-visible {
+        outline: 2px solid $secondary;
+        outline-offset: 2px;
+      }
+
+      &.active {
+        background: $secondary;
+        color: $primary;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.logo {
+  border-radius: 50%;
+  padding: 0.5em 0.5rem;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  background: $third;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
