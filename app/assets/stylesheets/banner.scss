@@ -1,0 +1,33 @@
+.banner {
+  justify-content: space-between;
+  background: white;
+  height: 60px;
+}
+
+.banner .banner-collapse {
+  flex-grow: 0;
+}
+
+.banner .banner-brand img {
+  width: 40px;
+}
+
+.banner-bg {
+  background-image: url('https://cdn.prod.website-files.com/6376980d89260e9c2cdee566/64df81d6200a0e03c45e823a_famous-buildings-round-the-world-travel-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner {
+  height: 250px;
+}
+
+.merienda-font {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  color: #fb8500;
+}
