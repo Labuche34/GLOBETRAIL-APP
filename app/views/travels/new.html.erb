@@ -1,9 +1,20 @@
-<%# <%= simple_form_for @travel do |f| %>
-  <%# <%= f.input country: "Choose your destination country" %>
-<%# <% end %>
 
-<%= simple_form_for @travel do |f| %>
-  <%= f.input :country %>
-  <%= f.input :number_of_travellers %>
-  <%= f.button :submit %>
-<% end %>
+
+<div class="container col-12">
+
+  <div class="row text-center my-3 header">
+    <h1>Let’s plan your next adventure! 🌍</h1>
+  </div>
+
+  <div class="row content">
+    <%= simple_form_for @travel do |f| %>
+      <%= f.input :country %>
+      <%= f.input :number_of_travellers %>
+      <%= f.input :budget %>
+      <%= f.input :trip_duration %>
+      <%= f.input :departure_city %>
+      <%= f.input :travellers_type %>
+      <%= f.button :submit, "Create your trip", class: "button align-center" %>
+    <% end %>
+  </div>
+</div>
