@@ -13,8 +13,10 @@
       <%= f.input :budget %>
       <%= f.input :trip_duration %>
       <%= f.input :departure_city %>
-      <%= f.input :travellers_type %>
-      <%= f.button :submit, "Create your trip", class: "button align-center" %>
+      <%= f.input :travellers_type, collection: ["Solo", "Couple", "Family with young kids", "Family with teenagers", "Group of friends"] %>
+      <div class="btn-centerred">
+        <%= f.button :submit, "Create your trip", class: "button text-center" %>
+      </div>
     <% end %>
   </div>
 </div>
