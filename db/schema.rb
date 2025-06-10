@@ -10,12 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.1].define(version: 0) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-=======
 ActiveRecord::Schema[7.1].define(version: 2025_06_09_155206) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,5 +61,4 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_09_155206) do
   add_foreign_key "spendings", "stops"
   add_foreign_key "stops", "travels"
   add_foreign_key "travels", "users"
->>>>>>> 881219872022c1384f2fe5cb1e830132dfdaf06e
 end
