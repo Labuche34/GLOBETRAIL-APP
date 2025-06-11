@@ -17,12 +17,15 @@
         <h2 class="merienda-font m-0 text-center">GlobeTrail</h2>
       <% end %>
     </div>
+    <div class="main-content">
     <%= yield %>
     <nav>
       <div class="navbar">
-        <a href="#">MY TRAVELS</a>
+        <a href="#" class="navbar-link">MY TRAVELS</a>
+        <a href="#" class="logo-link">
         <%= image_tag("logo", alt: "Logo du site", class: "logo", width: 55, height: 55) %>
-        <a href="#">ASK EXPLOREO</a>
+        </a>
+        <a href="#" class="navbar-link">EXPLOREO</a>
       </div>
     </nav>
   </body>
