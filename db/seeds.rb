@@ -67,13 +67,13 @@ Stop.destroy_all
 puts "Creating stops..."
 Stop.create!(
   notes: "Plenty of monuments to visit",
-  address: "Barcelona",
+  city: "Barcelona",
   travel_id: spain_travel.id,
 )
 
 Stop.create!(
   notes: "Relaxing city",
-  address: "Valencia",
+  city: "Valencia",
   travel_id: spain_travel.id,
 )
 
