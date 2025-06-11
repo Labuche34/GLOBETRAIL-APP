@@ -10,17 +10,34 @@
 
 .banner .banner-brand img {
   width: 40px;
+  opacity: .7;
 }
 
 .banner-bg {
-  background-image: url('https://cdn.prod.website-files.com/6376980d89260e9c2cdee566/64df81d6200a0e03c45e823a_famous-buildings-round-the-world-travel-wallpaper.jpg');
+  // background-image: url('https://cdn.prod.website-files.com/6376980d89260e9c2cdee566/64df81d6200a0e03c45e823a_famous-buildings-round-the-world-travel-wallpaper.jpg');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  clip-path: inset(20px 0 20px 0);
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  // filter: brightness(1.2);
 }
 
-.banner {
-  height: 250px;
+.banner-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin: 20px auto 0 auto;
 }
 
 .merienda-font {
