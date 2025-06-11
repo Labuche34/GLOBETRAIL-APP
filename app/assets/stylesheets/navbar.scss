@@ -35,7 +35,9 @@ nav {
     padding: 0 0.5rem;
 
     .navbar-link {
-      color: $text;
+    color: white;
+    text-shadow:
+     1px  1px 0 $third;
       text-decoration: none;
       padding: 0.7em 0.7rem;
       font-size: 1.1rem;
@@ -47,17 +49,17 @@ nav {
       &:hover,
       &:focus {
         background: $primary;
-        color: $secondary;
+        color: rgba($secondary, 0.2);
         transform: translateY(-2px) scale(1.1);
       }
 
       &:focus-visible {
-        outline: 2px solid $secondary;
+        outline: 2px solid rgba($secondary, 0.2);
         outline-offset: 2px;
       }
 
       &.active {
-        background: $secondary;
+        background: rgba($secondary, 0.2);
         color: $primary;
         font-weight: bold;
       }
