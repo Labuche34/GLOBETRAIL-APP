@@ -1,7 +1,7 @@
 // Variables couleurs
 $primary: #219ebc;
 $secondary: #fb8500;
-$third: #006c86;
+$third: #FF5449;
 $text: #ffffff;
 
 body {
@@ -48,7 +48,7 @@ nav {
       &:focus {
         background: $primary;
         color: $secondary;
-        transform: translateY(-2px) scale(1.05);
+        transform: translateY(-2px) scale(1.1);
       }
 
       &:focus-visible {
@@ -89,7 +89,7 @@ nav {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  background: $third;
+  background: $primary;
   display: flex;
   align-items: center;
   justify-content: center;
