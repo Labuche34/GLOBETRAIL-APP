@@ -1,4 +1,5 @@
 class TravelsController < ApplicationController
+  before_action :set_travel, only: %i[show]
 
   def index
     @travels = Travel.all
@@ -20,9 +21,8 @@ class TravelsController < ApplicationController
   end
 
   def show
-    # @travel = Travel.new
-    # @travels = Travel.all
     @travel = Travel.find(params[:id])
+    @stop = Stop.new
     # longitude et la latitude de chaque stop dans un travel donné
 
     @markers = @travel.stops.geocoded.map do |stop|
