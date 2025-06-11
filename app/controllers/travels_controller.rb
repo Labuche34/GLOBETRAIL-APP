@@ -18,6 +18,11 @@ class TravelsController < ApplicationController
     end
   end
 
+  def show
+    @travel = Travel.new
+    @travels = Travel.all
+  end
+
   private
 
   def travel_params
