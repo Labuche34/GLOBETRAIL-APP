@@ -1,7 +1,8 @@
 <p><strong>Stops</strong></p>
 <ul class="list-group">
   <% @travel.stops.each do |stop| %>
-    <li class="list-group-item"><%= stop.content %></li>
+    <li class="list-group-item">
+      <p>City: </p><%= stop.address %>
+    </li>
   <% end %>
 </ul>
-<br>

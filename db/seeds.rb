@@ -8,14 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+#---------TRAVELS----------
+
 puts "Cleaning database..."
 Travel.destroy_all
 
-user_1 = User.create!(email: "test@gmail.com", password: "azerty")
+user_1 = User.create!(email: "test3@gmail.com", password: "azerty")
+
 
 # 2. Create the instances 🏗️
 puts "Creating Travel..."
-Travel.create!(
+spain_travel = Travel.create!(
   user_id: user_1.id,
   country: "Spain",
   number_of_travellers: 6,
@@ -24,7 +27,7 @@ Travel.create!(
   travellers_type: "Friends"
 )
 
-Travel.create!(
+sweden_travel = Travel.create!(
   user_id: user_1.id,
   country: "Sweden",
   number_of_travellers: 2,
@@ -33,7 +36,7 @@ Travel.create!(
   travellers_type: "Couple"
 )
 
-Travel.create!(
+indonesia_travel = Travel.create!(
   user_id: user_1.id,
   country: "Indonesia",
   number_of_travellers: 2,
@@ -42,7 +45,7 @@ Travel.create!(
   travellers_type: "Couple"
 )
 
-Travel.create!(
+mexico_travel = Travel.create!(
   user_id: user_1.id,
   country: "Mexico",
   number_of_travellers: 6,
@@ -53,3 +56,26 @@ Travel.create!(
 
 # 3. Display a message 🎉
 puts "Finished! Created #{Travel.count} travels."
+
+#---------STOPS----------
+
+# 1. Clean the database 🗑️
+puts "Cleaning stops database..."
+Stop.destroy_all
+
+# 2. Create the instances 🏗️
+puts "Creating stops..."
+Stop.create!(
+  notes: "Plenty of monuments to visit",
+  address: "Barcelona",
+  travel_id: spain_travel.id,
+)
+
+Stop.create!(
+  notes: "Relaxing city",
+  address: "Valencia",
+  travel_id: spain_travel.id,
+)
+
+# 3. Display a message 🎉
+puts "Finished! Created #{Stop.count} stops."
