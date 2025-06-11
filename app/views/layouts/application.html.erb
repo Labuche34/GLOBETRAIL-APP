@@ -12,11 +12,11 @@
   </head>
 
   <body>
-    <nav class="banner banner-bg">
+    <div class="banner banner-bg" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(219, 216, 216, 0.4)), url(https://cdn.prod.website-files.com/6376980d89260e9c2cdee566/64df81d6200a0e03c45e823a_famous-buildings-round-the-world-travel-wallpaper.jpg)">
       <%= link_to travels_path, class: "text-decoration-none text-dark" do %>
-        <h2 class="merienda-font m-0 text-center">GlobeTrail</h2>
+        <h2 class="merienda-font m-0 text-center banner-title">GlobeTrail</h2>
       <% end %>
-    </nav>
+    </div>
     <%= yield %>
     <nav>
       <div class="navbar">
