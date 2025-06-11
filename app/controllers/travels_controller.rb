@@ -10,6 +10,7 @@ class TravelsController < ApplicationController
 
   def create
     @travel = Travel.new(travel_params)
+    @travel.user = current_user
     if @travel.save
       redirect_to travel_path(@travel)
     else
