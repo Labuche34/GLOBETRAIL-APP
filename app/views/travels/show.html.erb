@@ -1,7 +1,15 @@
 <p><strong>Stops</strong></p>
 <ul class="list-group">
   <% @travel.stops.each do |stop| %>
-    <li class="list-group-item"><%= stop.content %></li>
+    <li class="list-group-item"><%= stop.address %></li>
   <% end %>
 </ul>
 <br>
+
+<h1>New stop</h1>
+<%= simple_form_for [@travel, @stop] do |f| %>
+  <%= f.input :address %>
+  <%= f.submit "Submit stop", class: "btn btn-primary" %>
+<% end %>
+
+
