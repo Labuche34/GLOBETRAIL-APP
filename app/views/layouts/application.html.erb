@@ -7,16 +7,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css", rel: "stylesheet" %>
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="banner banner-bg">
+    <div class="banner banner-bg">
       <%= link_to travels_path, class: "text-decoration-none text-dark" do %>
         <h2 class="merienda-font m-0 text-center">GlobeTrail</h2>
       <% end %>
-    </nav>
+    </div>
     <%= yield %>
     <nav>
       <div class="navbar">
