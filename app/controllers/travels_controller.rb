@@ -21,17 +21,40 @@ class TravelsController < ApplicationController
   end
 
   def show
-    set_travel
+    @travel = Travel.find(params[:id])
     @stop = Stop.new
+    # longitude et la latitude de chaque stop dans un travel donné
+
+    @markers = @travel.stops.geocoded.map do |stop|
+      {
+        lat: stop.latitude,
+        lng: stop.longitude
+      }
+    end
+  end
+
+  def edit
+    @travel = Travel.find(params[:id])
+  end
+
+  def update
+    @travel = Travel.find(params[:id])
+    if @travel.update(travel_params)
+      redirect_to travel_path(@travel)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @travel = Travel.find(params[:id])
+    @travel.destroy
+    redirect_to travels_path
   end
 
   private
 
   def travel_params
     params.require(:travel).permit(:country, :number_of_travellers, :budget, :trip_duration, :departure_city, :travellers_type)
-  end
-
-  def set_travel
-    @travel = Travel.find(params[:id])
   end
 end

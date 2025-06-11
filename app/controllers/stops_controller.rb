@@ -7,6 +7,9 @@ class StopsController < ApplicationController
     redirect_to travel_path(@travel)
   end
 
+  def index
+  end
+
   private
 
   def stop_params

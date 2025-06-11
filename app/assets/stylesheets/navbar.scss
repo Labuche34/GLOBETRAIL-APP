@@ -11,10 +11,9 @@ body {
 }
 
 .main-content {
-  padding-top: 80px;
-  padding-bottom: calc(56px + 40px);
   min-height: 100vh;
   box-sizing: border-box;
+  padding-bottom: 80px;
 }
 
 nav {
@@ -25,6 +24,7 @@ nav {
   background: $primary;
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
   z-index: 100;
+  border-top: 1px solid $secondary;
 
   .navbar {
     display: flex;
@@ -36,6 +36,8 @@ nav {
 
     .navbar-link {
       color: $text;
+      text-shadow:
+      2px  2px 0 $secondary;
       text-decoration: none;
       padding: 0.7em 0.7rem;
       font-size: 1.1rem;
@@ -47,7 +49,7 @@ nav {
       &:hover,
       &:focus {
         background: $primary;
-        color: $secondary;
+        color: $text;
         transform: translateY(-2px) scale(1.1);
       }
 

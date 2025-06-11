@@ -1,7 +1,7 @@
 <p><strong>Stops</strong></p>
 <ul class="list-group">
   <% @travel.stops.each do |stop| %>
-    <li class="list-group-item"><%= stop.address %></li>
+    <li class="list-group-item"><%= stop.city %></li>
   <% end %>
 </ul>
 <br>
@@ -12,4 +12,9 @@
   <%= f.submit "Submit stop", class: "btn btn-primary" %>
 <% end %>
 
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
