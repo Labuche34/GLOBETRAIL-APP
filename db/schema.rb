@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_11_111054) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_11_140524) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,10 +26,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_11_111054) do
 
   create_table "stops", force: :cascade do |t|
     t.string "notes"
-    t.string "address"
+    t.string "city"
     t.bigint "travel_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["travel_id"], name: "index_stops_on_travel_id"
   end
 

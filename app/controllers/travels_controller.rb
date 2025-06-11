@@ -1,4 +1,5 @@
 class TravelsController < ApplicationController
+  before_action :set_travel, only: %i[show]
 
   def index
     @travels = Travel.all
@@ -20,8 +21,35 @@ class TravelsController < ApplicationController
   end
 
   def show
-    @travel = Travel.new
-    @travels = Travel.all
+    @travel = Travel.find(params[:id])
+    @stop = Stop.new
+    # longitude et la latitude de chaque stop dans un travel donné
+
+    @markers = @travel.stops.geocoded.map do |stop|
+      {
+        lat: stop.latitude,
+        lng: stop.longitude
+      }
+    end
+  end
+
+  def edit
+    @travel = Travel.find(params[:id])
+  end
+
+  def update
+    @travel = Travel.find(params[:id])
+    if @travel.update(travel_params)
+      redirect_to travel_path(@travel)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @travel = Travel.find(params[:id])
+    @travel.destroy
+    redirect_to travels_path
   end
 
   private

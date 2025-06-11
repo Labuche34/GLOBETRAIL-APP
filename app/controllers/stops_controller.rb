@@ -1,7 +1,7 @@
 class StopsController < ApplicationController
-  before_action :set_travel, only: %i[new create]
   def create
     @stop = Stop.new(stop_params)
+    @travel = Travel.find(params[:travel_id])
     @stop.travel = @travel
     @stop.save
     redirect_to travel_path(@travel)
@@ -9,7 +9,6 @@ class StopsController < ApplicationController
 
   def edit
     @stop = Stop.find(params[:id])
-    raise
   end
 
   def update
@@ -34,6 +33,6 @@ class StopsController < ApplicationController
   end
 
   def stop_params
-    params.require(:stop).permit(:content)
+    params.require(:stop).permit(:city)
   end
 end
