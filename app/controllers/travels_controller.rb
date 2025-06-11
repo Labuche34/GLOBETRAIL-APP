@@ -20,8 +20,17 @@ class TravelsController < ApplicationController
   end
 
   def show
-    @travel = Travel.new
-    @travels = Travel.all
+    # @travel = Travel.new
+    # @travels = Travel.all
+    @travel = Travel.find(params[:id])
+    # longitude et la latitude de chaque stop dans un travel donné
+
+    @markers = @travel.stops.geocoded.map do |stop|
+      {
+        lat: stop.latitude,
+        lng: stop.longitude
+      }
+    end
   end
 
   private
