@@ -7,6 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css", rel: "stylesheet" %>
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
@@ -17,8 +18,10 @@
         <h2 class="merienda-font m-0 text-center">GlobeTrail</h2>
       <% end %>
     </div>
+
     <div class="main-content">
-    <%= yield %>
+      <%= yield %>
+    </div>
     <nav>
       <div class="navbar">
         <a href="#" class="navbar-link">MY TRAVELS</a>
