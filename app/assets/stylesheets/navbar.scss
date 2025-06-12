@@ -21,7 +21,7 @@ nav {
   position: fixed;
   bottom: 0;
   left: 0;
-  background: $primary;
+  background: rgba($primary, 0.8);
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
   z-index: 100;
   border-top: 1px solid $secondary;
@@ -48,7 +48,6 @@ nav {
 
       &:hover,
       &:focus {
-        background: $primary;
         color: $text;
         transform: translateY(-2px) scale(1.1);
       }
@@ -60,7 +59,7 @@ nav {
 
       &.active {
         background: $secondary;
-        color: $primary;
+        color: rgba($primary, 0.8);
         font-weight: bold;
       }
     }
