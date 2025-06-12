@@ -1,0 +1,21 @@
+$primary: #219ebc;
+$secondary: #fb8500;
+$third: #FF5449;
+$text: #ffffff;
+
+.card-summary-home {
+  background: linear-gradient(120deg, rgba(33, 158, 188, 0.3) 0%, rgba(251, 133, 0, 0.3) 100%);
+  color: $text;
+  border-radius: 12px;
+  max-width: 600px;
+  padding: 24px 24px;
+  font-size: 1.15rem;
+  border: 2px solid $secondary;
+  height: 120px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px;
+}
+
