@@ -1,0 +1,13 @@
+<div class="container col-12">
+
+  <div class="row text-center my-3 header">
+    <h1>Edit your stop</h1>
+  </div>
+
+  <div class="row content">
+    <%= simple_form_for [@travel, @stop] do |f| %>
+      <%= f.input :city %>
+      <%= f.submit "Submit stop", class: "btn btn-primary button" %>
+    <% end %>
+  </div>
+</div>

@@ -24,6 +24,8 @@
   <ul class="list-group">
     <% @travel.stops.each do |stop| %>
       <li class="list-group-item"><%= stop.city %></li>
+        <%= link_to "Edit", edit_travel_stop_path(@travel, stop), class: "btn btn-sm button" %>
+        <%= link_to "Delete", stop_path(stop),  data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "btn btn-sm button ml-2" %>
     <% end %>
   </ul>
 </div>
