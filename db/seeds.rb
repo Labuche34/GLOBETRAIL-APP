@@ -16,7 +16,6 @@ User.destroy_all
 
 user_1 = User.create!(email: "test3@gmail.com", password: "azerty")
 
-
 # 2. Create the instances 🏗️
 puts "Creating Travel..."
 spain_travel = Travel.create!(
