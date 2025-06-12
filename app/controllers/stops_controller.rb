@@ -8,13 +8,15 @@ class StopsController < ApplicationController
   end
 
   def edit
+    @travel = Travel.find(params[:travel_id])
     @stop = Stop.find(params[:id])
   end
 
   def update
+    @travel = Travel.find(params[:travel_id])
     @stop = Stop.find(params[:id])
     if @stop.update(stop_params)
-      redirect_to stop_path(@stop)
+      redirect_to travel_path(@travel)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -23,14 +25,10 @@ class StopsController < ApplicationController
   def destroy
     @stop = Stop.find(params[:id])
     @stop.destroy
-    redirect_to stops_path, status: :see_other
+    redirect_to travel_path(@stop.travel), status: :see_other
   end
 
   private
-
-  def set_travel
-    @travel = Travel.find(params[:travel_id])
-  end
 
   def stop_params
     params.require(:stop).permit(:city)

@@ -5,7 +5,7 @@
   </div>
 <div class="content-container">
 
-<div class="mapbox-container" style="width: 100%; height: 600px;"
+<div class="mapbox-container" style="width: 94%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -24,6 +24,8 @@
   <ul class="list-group">
     <% @travel.stops.each do |stop| %>
       <li class="list-group-item"><%= stop.city %></li>
+        <%= link_to "Edit", edit_travel_stop_path(@travel, stop), class: "btn btn-sm button" %>
+        <%= link_to "Delete", stop_path(stop),  data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "btn btn-sm button ml-2" %>
     <% end %>
   </ul>
 </div>
