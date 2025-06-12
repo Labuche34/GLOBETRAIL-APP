@@ -1,0 +1,11 @@
+--2025-06-12 11:38:58--  https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+Resolving bin.equinox.io (bin.equinox.io)... 75.2.60.68, 35.71.179.82, 99.83.220.108, ...
+Connecting to bin.equinox.io (bin.equinox.io)|75.2.60.68|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9543082 (9.1M) [application/octet-stream]
+Saving to: ‘STDOUT’
+
+-                                 0%[                                                        ]       0  --.-KB/s               -                                 0%[                                                        ]  91.80K   310KB/s               -                                 4%[=>                                                      ] 425.52K   854KB/s               -                                18%[=========>                                              ]   1.66M  2.38MB/s               -                                46%[========================>                               ]   4.19M  4.59MB/s               -                                73%[=======================================>                ]   6.65M  5.97MB/s               -                               100%[=======================================================>]   9.10M  7.22MB/s    in 1.3s    
+
+2025-06-12 11:39:00 (7.22 MB/s) - written to stdout [9543082/9543082]
+
