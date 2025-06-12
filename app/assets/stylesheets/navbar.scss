@@ -103,6 +103,9 @@ nav {
   .main-content {
     padding-bottom: calc(72px + 40px);
   }
+  .content-container {
+    padding-bottom: calc(72px + 40px);
+  }
   nav .navbar {
     height: 72px;
     padding: 0 2rem;
@@ -120,7 +123,10 @@ nav {
 
 @media (min-width: 900px) {
   .main-content {
-    padding-bottom: calc(80px + 40px); // 80px = hauteur navbar desktop
+    padding-bottom: calc(80px + 40px);
+  }
+  .content-container {
+    padding-bottom: calc(80px + 40px);
   }
   nav .navbar {
     max-width: 900px;

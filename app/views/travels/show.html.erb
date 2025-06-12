@@ -1,29 +1,31 @@
-<div class="container col-12">
-
-  <div class="row text-center my-3 header">
-    <h1>My stops</h1>
+<div class="page-container">
+  <div class="row text-center my-3" id="header">
+    <h1>The world is yours !</h1>
+    <p>Let's add some stops 🌍🧳✈️</p>
   </div>
+<div class="content-container">
 
-  <div class="row content">
-    <ul class="list-group">
-      <% @travel.stops.each do |stop| %>
-        <li class="list-group-item"><%= stop.city %></li>
+<div class="mapbox-container" style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<br>
+<div>
+  <h1>New stop</h1>
+  <%= simple_form_for [@travel, @stop] do |f| %>
+    <%= f.input :city %>
+    <%= f.submit "Submit stop", class: "button text-center" %>
+  <% end %>
+</div>
+<br>
+<div>
+  <p><strong>Stops</strong></p>
+  <ul class="list-group">
+    <% @travel.stops.each do |stop| %>
+      <li class="list-group-item"><%= stop.city %></li>
         <%= link_to "Edit", edit_travel_stop_path(@travel, stop), class: "btn btn-sm button" %>
         <%= link_to "Delete", stop_path(stop),  data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "btn btn-sm button ml-2" %>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="row">
-    <%= simple_form_for [@travel, @stop] do |f| %>
-      <%= f.input :city, placeholder: "Add a stop" %>
-      <%= f.submit "Add", class: "btn btn-primary button" %>
     <% end %>
-  </div>
-
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+  </ul>
 </div>
