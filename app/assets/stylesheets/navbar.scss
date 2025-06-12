@@ -21,7 +21,7 @@ nav {
   position: fixed;
   bottom: 0;
   left: 0;
-  background: rgba($primary, 0.8);
+  background: rgba($primary, 0.9);
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
   z-index: 100;
   border-top: 1px solid $secondary;
@@ -59,7 +59,7 @@ nav {
 
       &.active {
         background: $secondary;
-        color: rgba($primary, 0.8);
+        color: rgba($primary, 0.9);
         font-weight: bold;
       }
     }
@@ -90,7 +90,7 @@ nav {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  background: $primary;
+  background: rgba($primary, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
