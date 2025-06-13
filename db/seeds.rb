@@ -65,17 +65,41 @@ Stop.destroy_all
 
 # 2. Create the instances 🏗️
 puts "Creating stops..."
-Stop.create!(
-  notes: "Plenty of monuments to visit",
+barcelona = Stop.create!(
   city: "Barcelona",
   travel_id: spain_travel.id,
 )
 
-Stop.create!(
-  notes: "Relaxing city",
+valencia = Stop.create!(
   city: "Valencia",
   travel_id: spain_travel.id,
 )
 
 # 3. Display a message 🎉
 puts "Finished! Created #{Stop.count} stops."
+
+#---------NOTES----------
+
+# 1. Clean the database 🗑️
+puts "Cleaning notes database..."
+Note.destroy_all
+
+# 2. Create the instances 🏗️
+puts "Creating stops..."
+Note.create!(
+  content: "Plenty of monuments to visit",
+  stop_id: barcelona.id,
+)
+
+Note.create!(
+  content: "Great city",
+  stop_id: barcelona.id,
+)
+
+Note.create!(
+  content: "Relaxing city",
+  stop_id: valencia.id,
+)
+
+# 3. Display a message 🎉
+puts "Finished! Created #{Note.count} notes."
