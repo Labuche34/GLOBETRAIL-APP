@@ -1,3 +1,4 @@
+
 <div class="container col-12">
   <div class="row text-center my-3">
     <h1>Notes & Pictures</h1>
@@ -26,4 +27,17 @@
       <% end %>
     </ul>
   </div>
+
+  <div class="row">
+    <p><strong>Pictures :</strong></p>
+
+  <% @picture.each do |picture| %>
+    <% picture.photos.each do |photo| %>
+      <div class="stop-picture-card">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <%= picture.description %>
+      </div>
+    <% end %>
+  <% end %>
+ </div>   
 </div>
