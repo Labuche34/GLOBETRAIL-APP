@@ -8,13 +8,34 @@
       <h1>Summary</h1>
       <p>Here are yours stats ! 🌍🧳✈️</p>
     </div>
-  <div class="card-summary-home">
-    <ul>
-      <strong>
-        <li>You've already visit <%= @travels %> country !</li>
-        <li>You've been visiting <%= @stops  %> cities !</li>
-        <li>You've been traveling for <%= @days %> days !</li>
-      </strong>
-    </ul>
+
+<div class="card-container">
+  <div class="d-flex justify-content-between justify-content-center text-center gap-3 p-3">
+    <div class="travel-card-show" style="width: 18rem;">
+      <div class="card-banner">
+        <p class="card-title">You've already visited</p>
+      </div>
+      <div class="card-content", style="background-image: url(https://media.istockphoto.com/id/1526986072/fr/photo/avion-survolant-la-mer-tropicale-au-coucher-du-soleil.jpg?s=612x612&w=0&k=20&c=VHE8wdL6Fz-9d4CG_Cf_ZqSQJaW9H_bGAV5lwPRIS3I=)">
+        <p class="card-text"><%= @travels %> countries</p>
+      </div>
+    </div>
+    
+    <div class="travel-card-show" style="width: 18rem;">
+      <div class="card-banner">
+        <p class="card-title">Stops number</p>
+      </div>
+      <div class="card-content", style="background-image: url(https://media.istockphoto.com/id/1500563478/fr/photo/une-femme-asiatique-voyageuse-se-d%C3%A9tend-et-voyage-sur-un-bateau-tha%C3%AFlandais-%C3%A0-longue-queue.jpg?s=612x612&w=0&k=20&c=l6xeSV8A3ZSHOjDgULU_Dm95GeXdeHXhB8MPLj7KnFE=)">
+        <p class="card-text"><%= @stops %> stop(s)</p>
+      </div>
+    </div>
+    
+    <div class="travel-card-show" style="width: 18rem;">
+      <div class="card-banner">
+        <p class="card-title">Days spent on trips</p>
+      </div>
+      <div class="card-content", style="background-image: url(https://media.istockphoto.com/id/1499760492/fr/photo/couple-romantique-heureux-voyageant-ensemble-et-fait-v%C5%93u-dans-la-vall%C3%A9e-pittoresque-de.jpg?s=612x612&w=0&k=20&c=h6R7gKhG4WltEGg8LaWVcsyIjuJCtKg2iv1sb8yg8Eg=)">
+        <p class="card-text"><%= @days %></p>
+      </div>
+    </div>
   </div>
 </div>

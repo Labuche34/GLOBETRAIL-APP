@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   def index
+    @travel = Travel.find(params[:travel_id])
     @picture = Picture.all
     # sera sur la page visualisation de figma avec spendings et notes
   end
@@ -47,6 +48,6 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:description)
+    params.require(:picture).permit(:description, photos: [])
   end
 end
