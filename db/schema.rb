@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_13_090309) do
     t.index ["stop_id"], name: "index_notes_on_stop_id"
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.string "description"
+    t.bigint "stop_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stop_id"], name: "index_pictures_on_stop_id"
+  end
+
   create_table "spendings", force: :cascade do |t|
     t.string "category"
     t.decimal "amount"
@@ -71,6 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_13_090309) do
   end
 
   add_foreign_key "notes", "stops"
+  add_foreign_key "pictures", "stops"
   add_foreign_key "spendings", "stops"
   add_foreign_key "stops", "travels"
   add_foreign_key "travels", "users"
