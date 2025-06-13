@@ -10,6 +10,7 @@ class StopsController < ApplicationController
   def edit
     @travel = Travel.find(params[:travel_id])
     @stop = Stop.find(params[:id])
+    @picture = Picture.new
   end
 
   def update
