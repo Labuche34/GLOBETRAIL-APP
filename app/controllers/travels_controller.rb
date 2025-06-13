@@ -54,6 +54,6 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:country, :number_of_travellers, :budget, :trip_duration, :departure_city, :travellers_type)
+    params.require(:travel).permit(:country, :number_of_travellers, :budget, :trip_duration, :departure_city, :travellers_type, :photo)
   end
 end
