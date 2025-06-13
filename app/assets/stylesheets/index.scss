@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 18px;
@@ -30,11 +30,13 @@
 }
 
 .travel-card .travel-card-infos {
-  padding: 16px;
+  padding-left: 16px;
+  min-width: 60%;
 }
 
 .travel-card-link {
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
