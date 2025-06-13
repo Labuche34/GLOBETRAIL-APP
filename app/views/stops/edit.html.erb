@@ -18,4 +18,12 @@
       <%= f.submit "Add notes", class: "btn btn-primary button" %>
     <% end %>
   </div>
+
+  <br>
+  <div class="row add-infos">
+    <%= simple_form_for [@travel, @stop, @picture] do |f| %>
+      <%= f.input :description, placeholder:"Add a description" %>
+      <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
+    <% end %>
+  </div>
 </div>
