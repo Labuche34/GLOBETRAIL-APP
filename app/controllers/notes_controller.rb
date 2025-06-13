@@ -3,35 +3,39 @@ class NotesController < ApplicationController
     @notes = Note.all
   end
 
+  def new
+    # stop + notes = bien rattaché ensemble et non dans un autre stop
+    @note = Note.new
+  end
+
+  def create
+    @travel = Travel.find(params[:travel_id])
+    @stop = Stop.find(params[:stop_id])
+    @note = Note.new(note_params)
+    @stop.travel = @travel
+    @note.stop = @stop
+    @note.save
+    redirect_to travel_stop_notes_path(@travel, @stop)
+  end
+
   def show
     @travel = Travel.find(params[:travel_id])
     @note = Note.find(params[:id])
     @stop = Stop.new
   end
 
-  def new
-    # stop + notes = bien rattaché ensemble et non dans un autre stop
-    @stop = Stop.find(params[:stop_id])
-    @note = @stop.notes.new
-  end
-
-  def create
-    @travel = Travel.find(params[:travel_id])
-    @stop = Stop.find(params[:stop_id])
-    @note = @stop.notes.new(note_params)
-    @note.save
-    redirect_to travel_path(@stop.travel)
-  end
-
   def edit
     @travel = Travel.find(params[:travel_id])
+    @stop = Stop.find(params[:stop_id])
     @note = Note.find(params[:id])
   end
 
   def update
+    @travel = Travel.find(params[:travel_id])
+    @stop = Stop.find(params[:stop_id])
     @note = Note.find(params[:id])
     if @note.update(note_params)
-      redirect_to travel_path(@note.stop.travel)
+      redirect_to note_path(@note)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,9 +43,8 @@ class NotesController < ApplicationController
 
   def destroy
     @note = Note.find(params[:id])
-    stop = @note.stop
     @note.destroy
-    redirect_to travel_path(stop.travel)
+    redirect_to stop_path(@note.stop), status: :see_other
   end
 
   private
