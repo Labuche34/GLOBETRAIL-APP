@@ -11,20 +11,14 @@ Rails.application.routes.draw do
 
   resources :travels do
     resources :stops, only: [:create, :edit, :update] do
-<<<<<<< notes-controller
       resources :notes, only: [:index, :show, :new, :create, :edit, :update]
-    end
-  end
-  resources :stops, only: [:destroy]
-  resources :notes, only: [:destroy]
-
-=======
       resources :pictures, only: [:new, :create, :edit, :update, :index]
     end
   end
   resources :stops, only: [:destroy]
+  resources :notes, only: [:destroy]
   resources :pictures, only: [:destroy]
->>>>>>> master
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
