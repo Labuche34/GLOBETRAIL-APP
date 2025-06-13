@@ -13,8 +13,8 @@
   <br>
 
   <div class="row add-infos">
-    <%= simple_form_for [@travel, @stop] do |f| %>
-      <%= f.input :notes %>
+    <%= simple_form_for [@travel, @stop, @note] do |f| %>
+      <%= f.input :content %>
       <%= f.submit "Add notes", class: "btn btn-primary button" %>
     <% end %>
   </div>

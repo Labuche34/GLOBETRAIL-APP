@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   def index
+    @travel = Travel.find(params[:travel_id])
     @picture = Picture.all
     # sera sur la page visualisation de figma avec spendings et notes
   end
