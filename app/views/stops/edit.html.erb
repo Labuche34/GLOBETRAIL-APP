@@ -23,6 +23,7 @@
   <div class="row add-infos">
     <%= simple_form_for [@travel, @stop, @picture] do |f| %>
       <%= f.input :description, placeholder:"Add a description" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
     <% end %>
   </div>
