@@ -34,8 +34,8 @@ sweden_travel = Travel.create!(
   country: "Sweden",
   number_of_travellers: 2,
   budget: 1200,
-  departure_date: "2018-07-22",
-  return_date: "2018-07-22",
+  departure_date: "2022-04-01",
+  return_date: "2022-04-07",
   departure_city: "Paris",
   travellers_type: "Couple"
 )
@@ -45,8 +45,8 @@ indonesia_travel = Travel.create!(
   country: "Indonesia",
   number_of_travellers: 2,
   budget: 5000,
-  departure_date: "2018-07-22",
-  return_date: "2018-07-22",
+  departure_date: "2020-12-12",
+  return_date: "2020-12-22",
   departure_city: "Marseille",
   travellers_type: "Couple"
 )
@@ -57,7 +57,7 @@ mexico_travel = Travel.create!(
   number_of_travellers: 6,
   budget: 7000,
   departure_date: "2018-07-22",
-  return_date: "2018-07-22",
+  return_date: "2018-07-30",
   departure_city: "Bruxelles",
   travellers_type: "Family"
 )
