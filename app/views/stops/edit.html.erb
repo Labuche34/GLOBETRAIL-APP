@@ -10,4 +10,12 @@
       <%= f.submit "Submit stop", class: "btn btn-primary button" %>
     <% end %>
   </div>
+  <br>
+
+  <div class="row add-infos">
+    <%= simple_form_for [@travel, @stop] do |f| %>
+      <%= f.input :notes %>
+      <%= f.submit "Add notes", class: "btn btn-primary button" %>
+    <% end %>
+  </div>
 </div>
