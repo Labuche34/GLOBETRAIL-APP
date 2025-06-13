@@ -3,19 +3,73 @@ $secondary: #fb8500;
 $third: #FF5449;
 $text: #ffffff;
 
-.card-summary-home {
-  background: linear-gradient(120deg, rgba(33, 158, 188, 0.3) 0%, rgba(251, 133, 0, 0.3) 100%);
-  color: $text;
-  border-radius: 12px;
-  max-width: 700px;
-  width: 90%;
-  padding: 24px 24px;
-  font-size: 1.15rem;
-  border: 2px solid $secondary;
-  height: 120px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.card-container {
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.travel-card-show {
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  margin: 12px 0;
+  box-sizing: border-box;
+  transition: max-width 0.2s, min-width 0.2s;
+}
+.card-banner {
+  background-color: #219ebc;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+.card-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.card-content {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  color: white;
+  min-height: 150px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 18px auto;
+  text-align: center;
+}
+
+.card-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.card-content:hover::before {
+  background: transparent;
+}
+
+.card-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
 }
