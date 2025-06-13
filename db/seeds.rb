@@ -22,7 +22,9 @@ spain_travel = Travel.create!(
   user_id: user_1.id,
   country: "Spain",
   number_of_travellers: 6,
-  budget: 1000, trip_duration: 4,
+  budget: 1000,
+  departure_date: "2025-07-22",
+  return_date: "2025-07-26",
   departure_city: "Marseille",
   travellers_type: "Friends"
 )
@@ -31,7 +33,9 @@ sweden_travel = Travel.create!(
   user_id: user_1.id,
   country: "Sweden",
   number_of_travellers: 2,
-  budget: 1200, trip_duration: 7,
+  budget: 1200,
+  departure_date: "2018-07-22",
+  return_date: "2018-07-22",
   departure_city: "Paris",
   travellers_type: "Couple"
 )
@@ -40,7 +44,9 @@ indonesia_travel = Travel.create!(
   user_id: user_1.id,
   country: "Indonesia",
   number_of_travellers: 2,
-  budget: 5000, trip_duration: 10,
+  budget: 5000,
+  departure_date: "2018-07-22",
+  return_date: "2018-07-22",
   departure_city: "Marseille",
   travellers_type: "Couple"
 )
@@ -49,7 +55,9 @@ mexico_travel = Travel.create!(
   user_id: user_1.id,
   country: "Mexico",
   number_of_travellers: 6,
-  budget: 7000, trip_duration: 8,
+  budget: 7000,
+  departure_date: "2018-07-22",
+  return_date: "2018-07-22",
   departure_city: "Bruxelles",
   travellers_type: "Family"
 )
