@@ -35,7 +35,7 @@
 
     <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <% @picture.each do |picture| %>
+        <% @stop.pictures.each do |picture| %>
           <% picture.photos.each_with_index do |photo, index| %>
             <div class="carousel-item <%= 'active' if index == 0 %>">
               <div class="image-container position-relative">
