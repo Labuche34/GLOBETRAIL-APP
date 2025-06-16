@@ -5,26 +5,28 @@
   </div>
 
   <div class="row content">
-    <%= simple_form_for [@travel, @stop] do |f| %>
-      <%= f.input :city %>
-      <%= f.submit "Submit stop", class: "btn btn-primary button" %>
-    <% end %>
-  </div>
-  <br>
+    <div class="row add-stop mb-3">
+      <%= simple_form_for [@travel, @stop] do |f| %>
+        <%= f.input :city %>
+        <%= f.submit "Submit stop", class: "btn btn-primary button" %>
+      <% end %>
+    </div>
+    <br>
 
-  <div class="row add-infos">
-    <%= simple_form_for [@travel, @stop, @note] do |f| %>
-      <%= f.input :content %>
-      <%= f.submit "Add notes", class: "btn btn-primary button" %>
-    <% end %>
-  </div>
+    <div class="row add-infos my-3">
+      <%= simple_form_for [@travel, @stop, @note] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Add notes", class: "btn btn-primary button" %>
+      <% end %>
+    </div>
 
-  <br>
-  <div class="row add-infos">
-    <%= simple_form_for [@travel, @stop, @picture] do |f| %>
-      <%= f.input :description, placeholder:"Add a description" %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
-    <% end %>
+    <br>
+    <div class="row add-infos my-3">
+      <%= simple_form_for [@travel, @stop, @picture] do |f| %>
+        <%= f.input :photos, label: "Pictures", as: :file, input_html: { multiple: true } %>
+        <%= f.input :description, label: false, placeholder:"Add a description" %>
+        <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
+      <% end %>
+    </div>
   </div>
 </div>
