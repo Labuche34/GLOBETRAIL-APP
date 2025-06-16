@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   resources :notes, only: [:destroy]
   resources :pictures, only: [:destroy]
 
+  resources :chats, only: [:show] do
+    resources :messages, only: [:create]
+  end
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
