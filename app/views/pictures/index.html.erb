@@ -1,28 +1,31 @@
 
 <div class="container col-12">
   <div class="row text-center my-3">
-    <h1>Notes & Pictures</h1>
+    <h1><%= @stop.city.capitalize %>'s Notes & Pictures </h1>
     <p>All your memories by stop</p>
   </div>
 
   <div class="row">
     <p><strong>Notes :</strong></p>
     <ul class="list-group">
-      <% @travel.stops.each do |stop| %>
-        <li class="list-group-item stop-card" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
-          <%= stop.city.capitalize %>
+      <% @stop.notes.each do |note| %>
+        <li class="list-group-item" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
+              <div class="notes-content" style="display: flex; flex-direction: row; justify-content: space-between;">
+                <div class="content" style="flex-direction: row; display: flex">
 
-          <% if stop.notes.any? %>
+                    <%= simple_form_for [@travel, @stop, note], method: :patch, html: { style: "display: flex; height: 40px"} do |f| %>
+                      <%= f.input :content, label: false, input_html: { style: "height: 40px" } %>
+                      <%= f.hidden_field :note_id, value: note.id %>
+                      <%= f.submit "Add notes", class: "btn btn-primary button" %>
+                    <% end %>
 
-              <% stop.notes.each do |note| %>
-                  <%= note.content %>
-                  <%= link_to stop_path(stop), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "btn btn-sm button ml-2 button-stop-card" do %>
+                </div>
+                <div class="button" style="flex-direction: row; display: flex">
+                  <%= link_to note_path(note), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "btn btn-sm button ml-2 button-stop-card" do %>
                   <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
                   <% end %>
-              <% end %>
-          <% else %>
-            <span class="ms-2">No notes for this stop yet.</span>
-          <% end %>
+                </div>
+                </div>
         </li>
       <% end %>
     </ul>
@@ -39,5 +42,5 @@
       </div>
     <% end %>
   <% end %>
- </div>   
+ </div>
 </div>

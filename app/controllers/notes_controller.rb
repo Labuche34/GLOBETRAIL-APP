@@ -4,7 +4,6 @@ class NotesController < ApplicationController
   end
 
   def new
-    # stop + notes = bien rattaché ensemble et non dans un autre stop
     @note = Note.new
   end
 
@@ -33,12 +32,12 @@ class NotesController < ApplicationController
   def update
     @travel = Travel.find(params[:travel_id])
     @stop = Stop.find(params[:stop_id])
-    @note = Note.find(params[:id])
-    if @note.update(note_params)
+    @note = Note.find(params[:note][:note_id])
+    if @note.update!(note_params)
       # redirect_to note_path(@note)
-      redirect_to stop_path(@stop)
+      redirect_to travel_stop_pictures_path(@travel, @stop)
     else
-      render :edit, status: :unprocessable_entity
+      render template: 'pictures/index', status: :unprocessable_entity
     end
   end
 
