@@ -1,8 +1,12 @@
 <div class="page-container">
+<%= link_to '⬅ Back', '#', onclick: 'window.history.back(); return false;', class: "back-button" %>
+
   <div class="row text-center my-3" id="header">
     <h1>The world is yours !</h1>
     <p>Let's add some stops 🌍🧳✈️</p>
   </div>
+
+  <br>
 
   <div class="content-container">
     <div class="mapbox-container" style="width: 94%; height: 600px;"
@@ -42,4 +46,9 @@
       </div>
     </div>
   </div>
+
+  <div class="row ms-2 mt-3 link">
+  <%= link_to "Ask Exploreo, your travel agent, for more details ... 😉", travel_chats_path(@travel), class: "btn btn-primary link-btn" %>
+  </div>
+
 </div>

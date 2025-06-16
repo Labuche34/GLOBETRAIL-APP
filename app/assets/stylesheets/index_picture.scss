@@ -1,12 +1,36 @@
-.stop-picture-card {
-  overflow: hidden;
-  height: 280px;
-  background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 18px;
-  border-radius: 8px;
+.image-container {
+  position: relative;
+  height: 300px; /* même que la hauteur de l'image */
+}
+
+/* Assure que les flèches se positionnent sur l'image uniquement */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 150px; /* moitié de 300px */
+  transform: translateY(-50%);
+  bottom: auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg);
+}
+
+.delete-photo-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #219ebc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  padding: 0;
+  cursor: pointer;
 }
 
 label[for="submit-button"] {

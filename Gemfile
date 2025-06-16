@@ -45,6 +45,12 @@ gem "devise"
 gem 'country_select'
 gem "geocoder"
 gem "cloudinary"
+gem "ruby_llm"
+gem "kramdown"
+gem "rouge"
+gem "kramdown-parser-gfm"
+gem "redcarpet"
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
