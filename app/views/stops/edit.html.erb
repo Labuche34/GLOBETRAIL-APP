@@ -30,5 +30,15 @@
         <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
       <% end %>
     </div>
+
+    <br>
+    <div class="row add-budget my-3">
+      <%= simple_form_for [@travel, @stop, @spending] do |f| %>
+        <%= f.input :category, label: "Spendings", placeholder:"Spending category", collection: ["Food", "Accomodation", "Transportation", "Leisure"] %>
+        <%= f.input :amount, label: false, placeholder:"Add an amount" %>
+        <%= f.input :currency, label: false, placeholder:"Currency" %>
+        <%= f.submit "Add spendings", class: "btn btn-primary button" %>
+      <% end %>
+    </div>
   </div>
 </div>
