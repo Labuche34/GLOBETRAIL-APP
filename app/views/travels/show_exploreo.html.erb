@@ -1,0 +1,7 @@
+<div id="output" class="markdown-content">
+  <% @assistant_messages.each do |msg| %>
+    <div class="markdown-content">
+      <strong><%= render_markdown(msg.content).html_safe %></strong>
+    </div>
+  <% end %>
+</div>
