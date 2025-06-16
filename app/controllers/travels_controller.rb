@@ -51,6 +51,14 @@ class TravelsController < ApplicationController
     redirect_to travels_path
   end
 
+  def new_exploreo
+
+  end
+
+  def create_exploreo
+    user_input = params[:user_input]
+  end
+
   private
 
   def travel_params
