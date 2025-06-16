@@ -5,6 +5,7 @@ class StopsController < ApplicationController
     @stop.travel = @travel
     @stop.save
     redirect_to travel_path(@travel)
+    
   end
 
   def edit
