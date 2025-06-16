@@ -8,3 +8,12 @@
   margin: 18px;
   border-radius: 8px;
 }
+
+label[for="submit-button"] {
+  /* Style the label to look like a button */
+  display: inline-block;
+}
+
+.list-group-item {
+  border: none;
+}
