@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   resources :stops, only: [:destroy]
   resources :notes, only: [:destroy]
   resources :pictures, only: [:destroy]
-
+  get "new_exploreo" => "travels#new_exploreo"
+  post "create_exploreo" => "travels#create_exploreo"
   # Defines the root path route ("/")
   # root "posts#index"
 end

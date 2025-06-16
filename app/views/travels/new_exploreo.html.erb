@@ -1,0 +1,8 @@
+  <div class="row content">
+    <%= form_with url: create_exploreo_path, method: :post, local: :true do |f| %>
+      <%= f.text_field :user_input %>
+      <div class="btn-centerred">
+        <%= f.submit "Supprise me!", class: "button text-center" %>
+      </div>
+    <% end %>
+  </div>
