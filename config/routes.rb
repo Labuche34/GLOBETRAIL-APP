@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :stops, only: [:create, :edit, :update] do
       resources :notes, only: [:index, :show, :new, :create, :edit, :update]
       resources :pictures, only: [:new, :create, :edit, :update, :index]
+      resources :spendings, only: [:new, :create, :edit, :update, :index]
     end
   end
 
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   resources :stops, only: [:destroy]
   resources :notes, only: [:destroy]
   resources :pictures, only: [:destroy]
+  resources :spendings, only: [:destroy]
 
   get "new_exploreo" => "travels#new_exploreo"
   post "create_exploreo" => "travels#create_exploreo"
