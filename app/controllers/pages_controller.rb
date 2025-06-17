@@ -10,5 +10,11 @@ class PagesController < ApplicationController
         0
       end
     end
+    @markers = Stop.all.geocoded.map do |stop|
+      {
+        lat: stop.latitude,
+        lng: stop.longitude
+      }
+    end
   end
 end
