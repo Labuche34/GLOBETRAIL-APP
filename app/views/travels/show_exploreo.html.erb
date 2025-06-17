@@ -1,27 +1,32 @@
 <div id="output" class="markdown-content">
   <% @assistant_messages.each do |msg| %>
-    <div class="markdown-content">
-      <strong><%= render_markdown(msg.content).html_safe %></strong>
+    <div class="markdown-content exploreo-response-container">
+      <%= render_markdown(msg.content).html_safe %>
     </div>
   <% end %>
-  <div class="row">
-    <p><strong>Stops</strong></p>
-    <ul class="list-group">
-      <% @stops.each do |stop| %>
-        <li class="list-group-item stop-card d-flex justify-content-between align-items-center" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
-          <span><%= stop.city.capitalize %></span>
-          <div class="d-flex gap-2">
-            <%= link_to edit_travel_stop_path(@travel, stop), class: "btn btn-sm button-stop-card" do %>
-              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
-            <% end %>
-            <%= link_to stop_path(stop), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "all-button" do %>
-              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
-            <% end %>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+  <div class="content-container">
+    <div class="exploreo-stops-container" style="width: 94%; height: 110%;"
+      <p> <strong id="stops">Stops</strong> </p>
+        <ul class="list-group">
+          <% @stops.each do |stop| %>
+            <li class="list-group-item stop-card d-flex justify-content-between align-items-center" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
+              <span><%= stop.city.capitalize %></span>
+              <div class="d-flex gap-2">
+                <%= link_to edit_travel_stop_path(@travel, stop), class: "btn btn-sm button-stop-card" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                <% end %>
+                <%= link_to stop_path(stop), data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete this stop?" }, class: "all-button" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+    </div>
   </div>
-  <%= link_to "Accept this travel", travel_path(@travel) %>
-  <%= link_to "Refuse this travel", destroy_exploreo_path(@travel), data:{turbo_method: :delete} %>
+  <br>
+  <div class="exploreo-button">
+    <%= link_to "Let's go!", travel_path(@travel), class: "all-button" %>
+    <%= link_to "Try again", destroy_exploreo_path(@travel), data:{turbo_method: :delete}, class: "all-button" %>
+  </div>
 </div>
