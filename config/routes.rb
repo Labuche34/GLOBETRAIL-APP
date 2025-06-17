@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   resources :travels do
     resources :chats, only: [:create, :show, :index]
     resources :stops, only: [:create, :edit, :update] do
-      resources :notes, only: [:index, :show, :new, :create, :update]
-      resources :pictures, only: [:new, :create, :edit, :update, :index]
-      resources :spendings, only: [:new, :create, :edit, :update, :index]
+      resources :notes, only: [:index, :new, :create, :update]
+      resources :pictures, only: [:index, :new, :create, :update]
+      resources :spendings, only: [:index, :new, :create, :update]
     end
   end
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  resources :stops, only: [:destroy]
+  resources :stops, only: [:show, :destroy]
   resources :notes, only: [:destroy]
   resources :pictures, only: [:destroy]
   resources :spendings, only: [:destroy]
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "new_exploreo" => "travels#new_exploreo"
   post "create_exploreo" => "travels#create_exploreo"
   get "show_exploreo/:id" => "travels#show_exploreo", as: "show_exploreo"
+  delete "destroy_exploreo/:id" => "travels#destroy_exploreo", as: "destroy_exploreo"
 
   # Defines the root path route ("/")
   # root "posts#index"
