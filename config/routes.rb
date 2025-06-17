@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "new_exploreo" => "travels#new_exploreo"
   post "create_exploreo" => "travels#create_exploreo"
   get "show_exploreo/:id" => "travels#show_exploreo", as: "show_exploreo"
+  delete "destroy_exploreo/:id" => "travels#destroy_exploreo", as: "destroy_exploreo"
 
   # Defines the root path route ("/")
   # root "posts#index"
