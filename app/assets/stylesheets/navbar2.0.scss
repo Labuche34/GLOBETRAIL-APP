@@ -1,0 +1,124 @@
+// Variables couleurs
+$primary: #c1c1c1;
+$secondary: #fb8500;
+$third: #FF5449;
+$text: #ffffff;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 80px;
+}
+
+nav {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $primary;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  border-top: 1px solid $secondary;
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+
+    .navbar-link {
+      color: $text;
+      text-shadow:
+      2px  2px 0 $secondary;
+      text-decoration: none;
+      padding: 0.7em 0.7rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      min-width: 44px;
+      min-height: 44px;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+
+      &:hover,
+      &:focus {
+        color: $text;
+        transform: translateY(-2px) scale(1.1);
+      }
+
+      &:focus-visible {
+        outline: 2px solid $secondary;
+        outline-offset: 2px;
+      }
+
+      &.active {
+        background: $secondary;
+        color: rgba($primary, 0.9);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 2px;
+    transform: translateY(-2px) scale(1.20);
+
+  }
+}
+
+.logo {
+  border-radius: 50%;
+  padding: 0.5em 0.5rem;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  background: rgba($primary, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+@media (max-width: 380px) {
+  .main-content {
+    padding-bottom: calc(58px + 32px);
+  }
+  .content-container {
+    padding-bottom: calc(58px + 32px);
+  }
+
+  nav .navbar {
+    height: 58px;
+
+    .navbar-link {
+      font-size: 0.8rem;
+      padding: 0.4em 0.6rem;
+    }
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+}
