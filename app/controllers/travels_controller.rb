@@ -57,7 +57,7 @@ class TravelsController < ApplicationController
   Format your response as a day-by-day list and include specific url links to go on the website (3 proposals for each categories).\n\n
   You will use this information to suggest the best trip.\n\n
   Finally, edit a short summary of my trip.\n\n
-  Structure the answer in two parts: first part in text format; second part in JSON.\n\n
+  Answer with a hash within 2 keys : first key in text format; second key in JSON object.\n\n
   The 'stops' will be cities that you'll find.
   This JSON part will be structure like this: {
   country:,
@@ -85,6 +85,7 @@ class TravelsController < ApplicationController
     if @message.save
       build_conversation_history
       @response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
+      raise
       Message.create(role: "assistant", content: @response.content, chat: @chat)
       redirect_to show_exploreo_path(@chat)
     else
