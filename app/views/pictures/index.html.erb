@@ -2,21 +2,12 @@
 
 <div class="container col-12">
   <div class="row text-center my-3">
-<<<<<<< notes-index-pictures
     <h1> Notes & Pictures </h1>
     <p>☀️ All your memories from <strong><%= @stop.city.capitalize %></strong> ☀️</p>
   </div>
 
   <div class="row" style="color: #219EBC">
     <p><strong>Notes :</strong></p>
-=======
-    <h1>Notes & Pictures</h1>
-    <p>☀️ All your memories from <%= @travel.country %> ☀️</p>
-  </div>
-
-  <div class="row">
-    <p><strong>Notes:</strong></p>
->>>>>>> master
     <ul class="list-group">
       <% @stop.notes.each do |note| %>
         <li class="list-group-item" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
@@ -43,13 +34,8 @@
   </div>
   <br>
 
-<<<<<<< notes-index-pictures
   <div class="row" style="color: #219EBC">
     <p><strong>Pictures :</strong></p>
-=======
-  <div class="row">
-    <p><strong>Pictures:</strong></p>
->>>>>>> master
 
     <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -71,10 +57,6 @@
           <% end %>
         <% end %>
       </div>
-<<<<<<< notes-index-pictures
-    <% end %>
-  <% end %>
-=======
 
       <button class="carousel-control-prev" type="button" data-bs-target="#photosCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -86,7 +68,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
->>>>>>> master
  </div>
 
  <div class="row">
