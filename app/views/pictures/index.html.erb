@@ -68,11 +68,23 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
- </div>
+  </div>
 
  <div class="row">
     <p><strong>Budget:</strong></p>
+    <p>Number of spendings: <%= @stop.spendings.count %>
+    <% total = @stop.spendings.map(&:amount_in_eur).compact.sum %>
+    <p>Total spendings: <%= number_to_currency(total, unit: "€") %></p>
 
+    <% @stop.spendings.each do |spending| %>
+      <p>Catégorie brute : <%= spending.category %> | Montant : <%= spending.amount_in_eur.inspect %></p>
+    <% end %>
+
+    <% grouped_spendings = @stop.spendings.group_by(&:category) %>
+    <% grouped_spendings.each do |category, spendings| %>
+      <% total = spendings.map(&:amount_in_eur).compact.sum %>
+      <p><strong><%= category %>:</strong> <%= number_to_currency(total, unit: "€") %></p>
+    <% end %>
 
  </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_16_103158) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_17_135425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,11 +80,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_16_103158) do
 
   create_table "spendings", force: :cascade do |t|
     t.string "category"
-    t.decimal "amount"
+    t.decimal "amount_cents"
     t.string "currency"
     t.bigint "stop_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "amount_in_eur_cents"
     t.index ["stop_id"], name: "index_spendings_on_stop_id"
   end
 
