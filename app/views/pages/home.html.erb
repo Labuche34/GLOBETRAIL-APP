@@ -1,6 +1,7 @@
 <div class="page-container">
   <div class="mapbox-container" style="width: 94%; height: 600px;"
     data-controller="mapglobe"
+    data-mapglobe-markers-value="<%= @markers.to_json %>"
     data-mapglobe-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <br>
