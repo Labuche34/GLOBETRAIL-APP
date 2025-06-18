@@ -119,7 +119,6 @@ class TravelsController < ApplicationController
 
     ### AFFICHAGE
     - Structure l’itinéraire comme un carnet de voyage : titres, paragraphes, listes à puces, sauts de ligne, suggestions bien séparées.
-    - Ne commence jamais une phrase par "{" ou ne termine par "\n".
     - Mets en valeur chaque jour, chaque activité, chaque suggestion, pour un rendu aussi immersif et inspirant que l’exemple ci-dessous :
 
     EXEMPLE D’AFFICHAGE ATTENDU :
