@@ -5,6 +5,9 @@ class Travel < ApplicationRecord
   has_many :stops, dependent: :destroy
   has_many :chats, dependent: :destroy
   has_one_attached :photo
+
+  geocoded_by :country
+  after_validation :geocode, if: :will_save_change_to_country?
   # after_create_commit :attach_image_to_place
 
   def attach_image_to_place

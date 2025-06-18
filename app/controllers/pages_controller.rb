@@ -10,10 +10,10 @@ class PagesController < ApplicationController
         0
       end
     end
-    @markers = Stop.all.geocoded.map do |stop|
+    @markers = current_user.travels.map do |travel|
       {
-        lat: stop.latitude,
-        lng: stop.longitude
+        lat: travel.latitude,
+        lng: travel.longitude
       }
     end
   end
