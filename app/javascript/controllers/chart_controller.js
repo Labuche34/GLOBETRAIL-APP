@@ -14,24 +14,41 @@ export default class extends Controller {
     const ctx = this.chartTarget.getContext('2d');
     this.chart = new Chart(ctx,
     {
-      type: 'doughnut',
+      type: 'bar',
       options: {
         animation: false,
         plugins: {
           legend: {
-            display: false
+            display: false,
+            labels: {
+              font: {
+                size: 12 // ← augmente ici la taille du texte
+              },
+              color: '#212925'
+            },
           },
           tooltip: {
             enabled: false
           }
+        },
+        formatter: (value, context) => {
+          const label = context.chart.data.labels[context.dataIndex]
+          return `${label}: €${(value / 100).toFixed(2)}`
         }
       },
       data: {
         labels: Object.keys(this.spendingsValue),
         datasets: [
           {
-            label: 'Acquisitions by year',
+            label: 'Spendings by categoty',
             data: Object.values(this.spendingsValue),
+            backgroundColor: [
+              '#8ecae6', // vert menthe
+              '#fb8500', // orange
+              '#023047', // bleu foncé
+              '#ffb703' // jaune doux
+            ],
+            hoverOffset: 4
           }
         ]
       }
