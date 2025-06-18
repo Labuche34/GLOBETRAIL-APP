@@ -164,9 +164,49 @@ Note.create!(
   stop_id: barcelona.id,
 )
 
+barcelona_picture = Picture.create!(
+  stop: barcelona,
+  description: "The iconic Arc de Triomf in Barcelona"
+)
+
+barcelona_picture.photos.attach(
+  io: URI.open("https://plus.unsplash.com/premium_photo-1697729758146-9aa25d423094?q=80&w=768&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "barcelona.jpg"
+)
+
+barcelona_picture = Picture.create!(
+  stop: barcelona,
+  description: "Stunning panoramic view of Barcelona showcasing the city's vibrant skyline and iconic architecture."
+)
+
+barcelona_picture.photos.attach(
+  io: URI.open("https://plus.unsplash.com/premium_photo-1697730076411-2b4602bf494f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "barcelona.jpg"
+)
+
 Note.create!(
   content: "Relaxing city",
   stop_id: valencia.id,
+)
+
+valencia_picture = Picture.create!(
+  stop: valencia,
+  description: "Valencia's charming blend of historic streets and modern attractions makes it a must-visit Mediterranean destination."
+)
+
+valencia_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1736685103486-0e70de4963ca?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "valencia.jpg"
+)
+
+valencia_picture = Picture.create!(
+  stop: valencia,
+  description: "Beautiful city of Valencia, known for its futuristic architecture and vibrant cultural scene."
+)
+
+valencia_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1736685102610-bd8cbd187b7d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "valencia.jpg"
 )
 
 Note.create!(
@@ -174,9 +214,39 @@ Note.create!(
   stop_id: gandia.id,
 )
 
+gandia_picture = Picture.create!(
+  stop: gandia,
+  description: "Gandia, a coastal town famous for its golden beaches and rich cultural heritage."
+)
+
+gandia_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1646586689626-9708c9643da1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "gandia.jpg"
+)
+
 Note.create!(
   content: "Love Malmo!",
   stop_id: malmo.id,
+)
+
+malmo_picture = Picture.create!(
+  stop: malmo,
+  description: "Malmo, a vibrant Swedish city known for its modern architecture and beautiful waterfront."
+)
+
+malmo_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1556802142-ad181001e013?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsbW98ZW58MHx8MHx8fDA%3D"),
+  filename: "malmo.jpg"
+)
+
+malmo_picture = Picture.create!(
+  stop: malmo,
+  description: "Gandia offers a perfect blend of historic charm"
+)
+
+malmo_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1540931532254-f03a93675e8a?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "malmo.jpg"
 )
 
 Note.create!(
@@ -184,14 +254,54 @@ Note.create!(
   stop_id: helsingborg.id,
 )
 
+helsingborg_picture = Picture.create!(
+  stop: helsingborg,
+  description: "Helsingborg is a picturesque coastal city"
+)
+
+helsingborg_picture.photos.attach(
+  io: URI.open("https://plus.unsplash.com/premium_photo-1732532199606-2308ad7d573c?q=80&w=1166&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "helsingborg.jpg"
+)
+
 Note.create!(
   content: "Beautiful city !",
   stop_id: halmstad.id,
 )
 
+halmstad_picture = Picture.create!(
+  stop: halmstad,
+  description: "Halmstad covered in snow creates a serene and magical atmosphere, perfect for enjoying quiet winter days and crisp fresh air."
+)
+
+halmstad_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1639588651502-a682abf8ab2d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "halmstad.jpg"
+)
+
 Note.create!(
   content: "Explored hidden waterfalls around Bali — amazing nature.",
   stop_id: bali.id,
+)
+
+bali_picture = Picture.create!(
+  stop: bali,
+  description: "Bali, a tropical paradise known for its lush rice terraces, vibrant culture, and stunning beaches that offer a perfect blend of relaxation and adventure."
+)
+
+bali_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "bali.jpg"
+)
+
+bali_picture = Picture.create!(
+  stop: bali,
+  description: "Bali is a beautiful island paradise."
+)
+
+bali_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "bali.jpg"
 )
 
 Note.create!(
@@ -228,5 +338,7 @@ Note.create!(
   content: "Took a boat tour to Isla Mujeres from Cancun — crystal-clear water!",
   stop_id: cancun.id
 )
+
+
 # 3. Display a message 🎉
 puts "Finished! Created #{Note.count} notes."
