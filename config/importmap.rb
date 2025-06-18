@@ -11,3 +11,5 @@ pin "flatpickr" # @4.6.13
 pin "flatpickr-css", to: "https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css"
 pin "mapbox-gl", to: "https://cdn.jsdelivr.net/npm/mapbox-gl@3.12.0/+esm", preload: true
 pin "mapbox-gl-css", to: "https://cdn.jsdelivr.net/npm/mapbox-gl@3.12.0/dist/mapbox-gl.css"
+pin "chart.js" # @4.5.0
+pin "@kurkle/color", to: "@kurkle--color.js" # @0.3.4
