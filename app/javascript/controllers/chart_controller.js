@@ -7,8 +7,7 @@ export default class extends Controller {
   static targets = [ 'chart' ]
 
   static values = {
-    category: Array,
-    spendings: Array
+    spendings: Object
   }
 
   connect() {
@@ -28,11 +27,11 @@ export default class extends Controller {
         }
       },
       data: {
-        labels: this.categoryValue,
+        labels: Object.keys(this.spendingsValue),
         datasets: [
           {
             label: 'Acquisitions by year',
-            data: this.spendingsValue
+            data: Object.values(this.spendingsValue),
           }
         ]
       }

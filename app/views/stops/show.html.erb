@@ -81,7 +81,7 @@
     <% total = @stop.spendings.map(&:amount_in_eur_cents).compact.sum %>
     <p>Total spendings: <%= number_to_currency(total, unit: "€") %></p>
 
-    <ul style="padding-left: 60px;" data-controller="chart" data-chart-category-value=<%= @stop.spendings.map(&:category).to_json %> data-chart-spendings-value=<%= @stop.spendings.map(&:amount_in_eur_cents).to_json %> >
+    <ul style="padding-left: 60px;" data-controller="chart" data-chart-spendings-value="<%= @stop.spendings.group(:category).sum(:amount_cents).to_json %>" >
       <% grouped_spendings = @stop.spendings.group_by(&:category) %>
       <% grouped_spendings.each do |category, spendings| %>
         <% total = spendings.map(&:amount_in_eur_cents).compact.sum %>
