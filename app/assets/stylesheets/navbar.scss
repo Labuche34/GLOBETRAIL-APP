@@ -31,7 +31,7 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
+    height: 64px;
     padding: 0 0.5rem;
     box-sizing: border-box;
     width: 100%;
@@ -101,7 +101,7 @@ nav {
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.20);
 }
 
-@media (max-width: 380px) {
+@media (max-width: 440px) {
   .main-content {
     padding-bottom: calc(58px + 32px);
   }
@@ -110,7 +110,7 @@ nav {
   }
 
   nav .navbar {
-    height: 58px;
+    height: 64px;
 
     .navbar-link {
       font-size: 0.8rem;
