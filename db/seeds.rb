@@ -176,7 +176,7 @@ barcelona_picture.photos.attach(
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
-  description: "Stunning panoramic view of Barcelona showcasing the city's vibrant skyline and iconic architecture."
+  description: "Beautiful view !"
 )
 
 barcelona_picture.photos.attach(
@@ -191,7 +191,7 @@ Note.create!(
 
 valencia_picture = Picture.create!(
   stop: valencia,
-  description: "Valencia's charming blend of historic streets and modern attractions makes it a must-visit Mediterranean destination."
+  description: "family walk"
 )
 
 valencia_picture.photos.attach(
@@ -201,7 +201,7 @@ valencia_picture.photos.attach(
 
 valencia_picture = Picture.create!(
   stop: valencia,
-  description: "Beautiful city of Valencia, known for its futuristic architecture and vibrant cultural scene."
+  description: "Beautiful city !"
 )
 
 valencia_picture.photos.attach(
@@ -216,7 +216,7 @@ Note.create!(
 
 gandia_picture = Picture.create!(
   stop: gandia,
-  description: "Gandia, a coastal town famous for its golden beaches and rich cultural heritage."
+  description: "Gandia beach"
 )
 
 gandia_picture.photos.attach(
@@ -231,7 +231,7 @@ Note.create!(
 
 malmo_picture = Picture.create!(
   stop: malmo,
-  description: "Malmo, a vibrant Swedish city known for its modern architecture and beautiful waterfront."
+  description: "I love the architecture"
 )
 
 malmo_picture.photos.attach(
@@ -250,7 +250,7 @@ malmo_picture.photos.attach(
 )
 
 Note.create!(
-  content: "Tried some local dishes and they were amazing!",
+  content: "Tried some local dishes",
   stop_id: helsingborg.id,
 )
 
@@ -280,13 +280,13 @@ halmstad_picture.photos.attach(
 )
 
 Note.create!(
-  content: "Explored hidden waterfalls around Bali — amazing nature.",
+  content: "Explored jungle",
   stop_id: bali.id,
 )
 
 bali_picture = Picture.create!(
   stop: bali,
-  description: "Bali, a tropical paradise known for its lush rice terraces, vibrant culture, and stunning beaches that offer a perfect blend of relaxation and adventure."
+  description: "Bali, a tropical paradise"
 )
 
 bali_picture.photos.attach(
@@ -296,7 +296,7 @@ bali_picture.photos.attach(
 
 bali_picture = Picture.create!(
   stop: bali,
-  description: "Bali is a beautiful island paradise."
+  description: "Bali is a beautiful island"
 )
 
 bali_picture.photos.attach(
@@ -305,37 +305,37 @@ bali_picture.photos.attach(
 )
 
 Note.create!(
-  content: "Great street food scene in Surabaya, especially the satay.",
+  content: "Great street food",
   stop_id: surabaya.id
 )
 
 Note.create!(
-  content: "The cool climate in Bandung was a nice break from the tropical heat.",
+  content: "Cool climate in Bandung",
   stop_id: bandung.id
 )
 
 Note.create!(
-  content: "The old town of Jakarta has a lot of colonial charm.",
+  content: "The old town of Jakarta",
   stop_id: jakarta.id
 )
 
 Note.create!(
-  content: "Visited the historic center of Mexico City — so vibrant and full of history.",
+  content: "Visited the historic center",
   stop_id: mexico.id
 )
 
 Note.create!(
-  content: "Tried cacao from a local plantation in Tabasco — delicious and rich in flavor.",
+  content: "Tried cacao from a local plantation",
   stop_id: tabasco.id
 )
 
 Note.create!(
-  content: "The beaches in Tulum are absolutely stunning and peaceful.",
+  content: "The beaches in Tulum",
   stop_id: tulum.id
 )
 
 Note.create!(
-  content: "Took a boat tour to Isla Mujeres from Cancun — crystal-clear water!",
+  content: "Took a boat tour to Isla Mujeres",
   stop_id: cancun.id
 )
 
