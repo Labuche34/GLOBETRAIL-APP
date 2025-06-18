@@ -29,7 +29,7 @@ class SpendingsController < ApplicationController
     @spending.amount_in_eur_cents = (converted.to_f) * 100
 
     @spending.save
-    redirect_to travel_stop_pictures_path(@travel, @stop), notice: "Spending added"
+    redirect_to stop_path(@stop), notice: "Spending added"
   end
 
   def edit
