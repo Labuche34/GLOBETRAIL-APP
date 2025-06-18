@@ -40,7 +40,7 @@ export default class extends Controller {
         labels: Object.keys(this.spendingsValue),
         datasets: [
           {
-            label: 'Spendings by categoty',
+            label: 'Spendings by category',
             data: Object.values(this.spendingsValue),
             backgroundColor: [
               '#8ecae6', // vert menthe
