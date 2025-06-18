@@ -11,7 +11,7 @@
   </div>
 
   <div class="row" style="color: #219EBC">
-    <p><strong>Notes :</strong></p>
+    <p><strong>Notes:</strong></p>
     <ul class="list-group">
       <% @stop.notes.each do |note| %>
         <li class="list-group-item" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
@@ -38,9 +38,10 @@
   </div>
   <br>
 
-  <div class="row" style="color: #219EBC">
-    <p><strong>Pictures :</strong></p>
+  <div class="row">
+    <p style="color: #219EBC"><strong>Pictures:</strong></p>
 
+    <% if @stop.pictures.present? %>
     <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <% @stop.pictures.each do |picture| %>
@@ -72,11 +73,21 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
- </div>
+    <% end %>
+  </div>
 
- <div class="row" style="color: #219EBC">
-    <p><strong>Budget:</strong></p>
+ <div class="row">
+    <p style="color: #219EBC"><strong>Budget:</strong></p>
+    <% total = @stop.spendings.map(&:amount_in_eur_cents).compact.sum %>
+    <p>Total spendings: <%= number_to_currency(total, unit: "€") %></p>
 
+    <ul style="padding-left: 60px;">
+      <% grouped_spendings = @stop.spendings.group_by(&:category) %>
+      <% grouped_spendings.each do |category, spendings| %>
+        <% total = spendings.map(&:amount_in_eur_cents).compact.sum %>
+        <li><p><%= category %>: <%= number_to_currency(total, unit: "€") %></p></li>
+      <% end %>
+    </ul>
 
  </div>
 </div>
