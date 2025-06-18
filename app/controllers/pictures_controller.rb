@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
     @stop.travel = @travel
     @picture.stop = @stop
     @picture.save
-    redirect_to travel_stop_pictures_path(@travel, @stop)
+    redirect_to stop_path(@stop)
   end
 
   def edit

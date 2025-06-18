@@ -14,7 +14,7 @@ export default class extends Controller {
     const ctx = this.chartTarget.getContext('2d');
     this.chart = new Chart(ctx,
     {
-      type: 'bar',
+      type: 'doughnut',
       options: {
         animation: false,
         plugins: {
