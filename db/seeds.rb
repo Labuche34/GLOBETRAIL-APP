@@ -304,6 +304,11 @@ Note.create!(
   stop_id: bandung.id
 )
 
+bandung_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "bandung.jpg"
+)
+
 Note.create!(
   content: "The old town of Jakarta has a lot of colonial charm.",
   stop_id: jakarta.id
