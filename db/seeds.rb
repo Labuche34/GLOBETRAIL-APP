@@ -239,9 +239,9 @@ malmo_picture.photos.attach(
   filename: "malmo.jpg"
 )
 
-malmo_picture = Picture.create!(
-  stop: malmo,
-  description: "Gandia offers a perfect blend of historic charm"
+malmo_picture.photos.attach(
+  io: URI.open("https://plus.unsplash.com/premium_photo-1671718606047-e150cc8c232f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "malmo.jpg"
 )
 
 malmo_picture.photos.attach(
