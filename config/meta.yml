@@ -1,0 +1,5 @@
+meta_product_name: "GlobeTrail"
+meta_title: "GlobeTrail - Travel far, Track smart !"
+meta_description: "GlobeTrail is the perfect app for travelers! Add photos, notes, and track your expenses with automatic currency conversion. Explore and share your adventures with ease."
+meta_image: "meta-img-globe-trail.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account" # required for Twitter Cards
