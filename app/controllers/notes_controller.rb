@@ -32,7 +32,7 @@ class NotesController < ApplicationController
   def update
     @travel = Travel.find(params[:travel_id])
     @stop = Stop.find(params[:stop_id])
-    @note = Note.find(params[:note][:note_id])
+    @note = Note.find(params[:id])
     if @note.update!(note_params)
       # redirect_to note_path(@note)
       redirect_to travel_stop_pictures_path(@travel, @stop)

@@ -5,7 +5,13 @@ class StopsController < ApplicationController
     @stop.travel = @travel
     @stop.save
     redirect_to travel_path(@travel)
+  end
 
+  def show
+    @stop = Stop.find(params[:id])
+    @pictures = Picture.all
+    @notes = Note.all
+    @spendings = Spending.all
   end
 
   def edit

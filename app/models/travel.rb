@@ -3,8 +3,9 @@ require 'open-uri'
 class Travel < ApplicationRecord
   belongs_to :user
   has_many :stops, dependent: :destroy
+  has_many :chats, dependent: :destroy
   has_one_attached :photo
-  # after_create_commit :attach_image_to_place
+  after_create_commit :attach_image_to_place
 
   def attach_image_to_place
     country_name = self.country

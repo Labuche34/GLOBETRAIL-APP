@@ -1,19 +1,23 @@
-<%= link_to '⬅ Back', '#', onclick: 'window.history.back(); return false;', class: "back-button" %>
-
 <div class="container col-12">
   <div class="row text-center my-3">
-    <h1> Notes & Pictures </h1>
-    <p>☀️ All your memories from <strong><%= @stop.city.capitalize %></strong> ☀️</p>
+    <h1><label for="city_select">☀️ All your memories from <%= @stop.city.capitalize %>☀️<br><br>
+    <%= select_tag :link_picker,
+      options_for_select(@stop.travel.stops.map { |a| [a.city.capitalize, stop_path(a)] }),
+      include_blank: 'Choose the city',
+      data: { controller: 'redirect', action: 'change->redirect#go' } %>
+      </h1>
+    <p> Pictures, Notes & Spendings </p>
+
   </div>
 
   <div class="row" style="color: #219EBC">
-    <p><strong>Notes :</strong></p>
+    <p><strong>Notes:</strong></p>
     <ul class="list-group">
       <% @stop.notes.each do |note| %>
         <li class="list-group-item" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
           <div class="notes-content" style="display: flex; flex-direction: row; justify-content: space-between;">
                 <div class="content" style="flex-direction: row; display: flex">
-                  <%= simple_form_for [@travel, @stop, note], method: :patch, html: { style: "display: flex; height: 40px; width: 100%;"} do |f| %>
+                  <%= simple_form_for [@stop.travel, @stop, note], method: :patch, html: { style: "display: flex; height: 40px; width: 100%;"} do |f| %>
                       <%= f.input :content, label: false, input_html: { style: "height: 50px; width: 70vw;" } %>
                       <%= f.hidden_field :note_id, value: note.id %>
                       <div class="d-flex">
@@ -35,7 +39,7 @@
   <br>
 
   <div class="row">
-    <p style="color: #219EBC"><strong>Pictures :</strong></p>
+    <p style="color: #219EBC"><strong>Pictures:</strong></p>
 
     <% if @stop.pictures.present? %>
     <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">

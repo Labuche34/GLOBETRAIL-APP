@@ -1,0 +1,38 @@
+.exploreo-button {
+  text-align: center;
+  margin: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.exploreo-response-container {
+  text-align: center;
+  margin: 24px;
+  padding: 6px;
+  justify-content: center;
+}
+
+.exploreo-text-container {
+  text-align: center;
+  margin: 24px;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+#stops {
+  padding-left: 32px;
+}
+
+.exploreo-stops-container {
+  width: 70%;
+  max-width: 700px;
+  margin: auto;
+  padding-top: 12px;
+  max-height: 450px;
+  border: 2px solid #fb8500;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
