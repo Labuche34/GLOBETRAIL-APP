@@ -214,11 +214,6 @@ Note.create!(
   stop_id: gandia.id,
 )
 
-gandia_picture = Picture.create!(
-  stop: gandia,
-  description: "Gandia, a coastal town famous for its golden beaches and rich cultural heritage."
-)
-
 gandia_picture.photos.attach(
   io: URI.open("https://images.unsplash.com/photo-1646586689626-9708c9643da1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
   filename: "gandia.jpg"
@@ -237,11 +232,6 @@ malmo_picture = Picture.create!(
 malmo_picture.photos.attach(
   io: URI.open("https://images.unsplash.com/photo-1556802142-ad181001e013?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsbW98ZW58MHx8MHx8fDA%3D"),
   filename: "malmo.jpg"
-)
-
-malmo_picture = Picture.create!(
-  stop: malmo,
-  description: "Gandia offers a perfect blend of historic charm"
 )
 
 malmo_picture.photos.attach(
