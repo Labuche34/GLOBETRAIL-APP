@@ -50,7 +50,10 @@ gem "kramdown"
 gem "rouge"
 gem "kramdown-parser-gfm"
 gem "redcarpet"
-
+gem 'countries'
+gem 'money'
+gem 'money-rails'
+gem 'eu_central_bank'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
