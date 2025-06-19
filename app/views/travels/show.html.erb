@@ -20,7 +20,7 @@
         <h1><%= @travel.country.capitalize %> new stop</h1>
         <%= simple_form_for [@travel, @stop] do |f| %>
           <%= f.input :city %>
-          <%= f.submit "Submit stop", class: "button text-center" %>
+          <%= f.submit "Submit stop", class: "all-button text-center" %>
         <% end %>
       </div>
       <br>
