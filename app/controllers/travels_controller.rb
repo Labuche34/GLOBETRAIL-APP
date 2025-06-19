@@ -178,7 +178,7 @@ class TravelsController < ApplicationController
     @message = Message.create!(role: "user", chat: @chat, content: params[:user_input])
 
     build_conversation_history
-    raw_response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
+    raw_response = @ruby_llm_chat.with_temperature(0.2).with_instructions(instructions).ask(@message.content)
 
     begin
       parsed      = JSON.parse(raw_response.content)     # ← peut lever JSON::ParserError
