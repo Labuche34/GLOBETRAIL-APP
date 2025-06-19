@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.1].define(version: 2025_06_18_082247) do
 
   # These are extensions that must be enabled in order to support this database
@@ -87,6 +86,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_18_082247) do
     t.bigint "stop_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "amount_in_eur_cents"
     t.index ["stop_id"], name: "index_spendings_on_stop_id"
   end
 
