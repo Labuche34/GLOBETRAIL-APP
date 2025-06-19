@@ -14,7 +14,7 @@ class NotesController < ApplicationController
     @stop.travel = @travel
     @note.stop = @stop
     @note.save
-    redirect_to travel_stop_pictures_path(@travel, @stop)
+    redirect_to stop_path(@stop)
   end
 
   def show
@@ -35,7 +35,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     if @note.update!(note_params)
       # redirect_to note_path(@note)
-      redirect_to travel_stop_pictures_path(@travel, @stop)
+      redirect_to stop_path(@stop)
     else
       render template: 'pictures/index', status: :unprocessable_entity
     end

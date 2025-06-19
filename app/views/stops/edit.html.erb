@@ -4,15 +4,6 @@
     <h1>Edit your stop</h1>
   </div>
 
-  <div class="row content">
-    <div class="row add-stop mb-3">
-      <%= simple_form_for [@travel, @stop] do |f| %>
-        <%= f.input :city %>
-        <%= f.submit "Submit stop", class: "btn btn-primary button" %>
-      <% end %>
-    </div>
-    <br>
-
     <div class="row add-infos my-3">
       <%= simple_form_for [@travel, @stop, @note] do |f| %>
         <%= f.input :content %>
@@ -32,9 +23,8 @@
     <br>
     <div class="row add-budget my-3">
       <%= simple_form_for [@travel, @stop, @spending] do |f| %>
-        <%= f.input :category, label: "Spendings", placeholder:"Spending category", collection: ["Food", "Accomodation", "Transportation", "Leisure"] %>
-        <%= f.input :amount, label: false, placeholder:"Add an amount" %>
-        <%= f.input :currency, label: false, placeholder:"Currency" %>
+        <%= f.input :category, label: "Spendings", placeholder:"Spending category", collection: ["Accomodation", "Food", "Leisure", "Transport"] %>
+        <%= f.input :amount_cents, label: false, placeholder:"Add an amount" %>
         <%= f.submit "Add spendings", class: "btn btn-primary button" %>
       <% end %>
     </div>

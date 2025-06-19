@@ -1,4 +1,5 @@
 class Stop < ApplicationRecord
+  has_many_attached :photos
   belongs_to :travel
   has_many :spendings, dependent: :destroy
   has_many :pictures, dependent: :destroy
