@@ -76,3 +76,35 @@ $text: #ffffff;
   filter: drop-shadow(0 12px 24px rgba(251,133,0,0.18));
   cursor: pointer;
 }
+
+@media (min-width: 380px) {
+  .banner-title {
+  position: absolute;
+  top: 50px;
+  left: 20%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  margin-left: auto;
+  padding: 8px 16px 16px 16px;
+  border-radius: 6px;
+  margin: 20px auto 0 auto;
+  }
+}
+
+@media (min-width: 700px) {
+  .banner-title {
+  position: absolute;
+  top: 50px;
+  left: 20%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2.5rem;
+  margin: 0;
+  margin-left: auto;
+  padding: 8px 16px 16px 16px;
+  border-radius: 6px;
+  margin: 20px auto 0 auto;
+  }
+}
