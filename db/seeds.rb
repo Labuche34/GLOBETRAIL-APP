@@ -173,7 +173,7 @@ Spending.create!([
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
-  description: "The iconic Arc de Triomf in Barcelona"
+  description: "The iconic Triomphal Arc in Barcelona"
 )
 
 barcelona_picture.photos.attach(
@@ -193,7 +193,7 @@ barcelona_picture.photos.attach(
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
-  description: "Museum"
+  description: "Gaudi Garden"
 )
 
 barcelona_picture.photos.attach(
@@ -224,7 +224,7 @@ Note.create!(
 
 valencia_picture = Picture.create!(
   stop: valencia,
-  description: "family walk"
+  description: "Family walk"
 )
 
 valencia_picture.photos.attach(
@@ -234,7 +234,7 @@ valencia_picture.photos.attach(
 
 valencia_picture = Picture.create!(
   stop: valencia,
-  description: "Love garden!"
+  description: "Lovely garden!"
 )
 
 valencia_picture.photos.attach(
