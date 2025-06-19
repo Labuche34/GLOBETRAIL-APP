@@ -17,7 +17,7 @@
 
     <div class="stop-section m-3">
       <div class="row new-stop">
-        <h1><%= @travel.country.capitalize %>'s new stop</h1>
+        <h1><%= @travel.country.capitalize %> new stop</h1>
         <%= simple_form_for [@travel, @stop] do |f| %>
           <%= f.input :city %>
           <%= f.submit "Submit stop", class: "button text-center" %>

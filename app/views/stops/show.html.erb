@@ -1,6 +1,6 @@
 <div class="container col-12">
   <div class="row text-center my-3">
-    <h1><label for="city_select">☀️ All your memories from <%= @stop.city.capitalize %>☀️<br><br>
+    <h1><label for="city_select">All your memories from <br>☀️ <%= @stop.city.capitalize %> ☀️<br><br>
     <%= select_tag :link_picker,
       options_for_select(@stop.travel.stops.map { |a| [a.city.capitalize, stop_path(a)] }),
       include_blank: 'Choose the city',
