@@ -7,7 +7,7 @@
     <div class="row add-infos my-3">
       <%= simple_form_for [@travel, @stop, @note] do |f| %>
         <%= f.input :content %>
-        <%= f.submit "Add notes", class: "btn btn-primary button" %>
+        <%= f.submit "Add notes", class: "all-button" %>
       <% end %>
     </div>
 
@@ -16,7 +16,7 @@
       <%= simple_form_for [@travel, @stop, @picture] do |f| %>
         <%= f.input :photos, label: "Pictures", as: :file, input_html: { multiple: true } %>
         <%= f.input :description, label: false, placeholder:"Add a description" %>
-        <%= f.submit "Add picture(s)", class: "btn btn-primary button" %>
+        <%= f.submit "Add picture(s)", class: "all-button" %>
       <% end %>
     </div>
 
@@ -25,7 +25,7 @@
       <%= simple_form_for [@travel, @stop, @spending] do |f| %>
         <%= f.input :category, label: "Spendings", placeholder:"Spending category", collection: ["Accomodation", "Food", "Leisure", "Transport"] %>
         <%= f.input :amount_cents, label: false, placeholder:"Add an amount" %>
-        <%= f.submit "Add spendings", class: "btn btn-primary button" %>
+        <%= f.submit "Add spendings", class: "all-button" %>
       <% end %>
     </div>
   </div>

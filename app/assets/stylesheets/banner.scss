@@ -1,4 +1,7 @@
-$primary: #ea6900e4;
+$primary: #219dbce4;
+$secondary: #fb8500;
+$third: #ed654de7;
+$text: #ffffff;
 
 .banner {
   justify-content: space-between;
@@ -13,6 +16,8 @@ $primary: #ea6900e4;
 .banner .banner-brand img {
   width: 40px;
   opacity: .7;
+  border-bottom: 2px solid $secondary;
+
 }
 
 .banner-bg {
@@ -26,7 +31,6 @@ $primary: #ea6900e4;
   justify-content: center;
   align-items: flex-start;
   padding-top: 15px;
-  // filter: brightness(1.2);
 }
 
 .banner-title {
@@ -50,8 +54,8 @@ $primary: #ea6900e4;
   font-size: 40px;
   color: #fb8500;
   text-shadow:
-    -2px -2px 0 $primary,
-     2px -2px 0 $primary,
-    -2px  2px 0 $primary,
-     2px  2px 0 $primary;
+    -2px -2px 0 $third,
+     2px -2px 0 $third,
+    -2px  2px 0 $third,
+     2px  2px 0 $third;
 }
