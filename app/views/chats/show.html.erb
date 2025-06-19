@@ -1,6 +1,6 @@
 <div class="container mt-3 mb-3">
 
-  <%= link_to "My trip in #{@chat.travel.country}", travel_path(@chat.travel), class: 'btn btn-primary link-btn' %>
+  <%= link_to "My trip in #{@chat.travel.country}", travel_path(@chat.travel), class: 'all-button btn-primary link-btn' %>
 
   <div class="row text-center my-3 classic-text" id="header">
     <h1><%= @chat.title %></h1>
@@ -28,6 +28,7 @@
 
   <%= simple_form_for [@chat, @message] do |f| %>
     <%= f.input :content, placeholder: "Ask me anything to plan your trip", required: true, label: false %>
-    <%= f.button :submit, 'Ask Exploreo', class: 'btn btn-primary link-btn' %>
+    <%= f.submit 'Ask Exploreo', class: 'all-button' %>
+
   <% end %>
 </div>

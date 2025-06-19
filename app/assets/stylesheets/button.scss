@@ -1,3 +1,8 @@
+$primary: #219dbce4;
+$secondary: #fb8500;
+$third: #FF5449;
+$text: #ffffff;
+
 .button {
   border-radius: 8px;
   background-color: #219ebc;
@@ -19,4 +24,19 @@
   text-align: center;
   align-items: center;
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $text;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    color: $secondary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 2px;
+  }
 }

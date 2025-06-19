@@ -7,35 +7,8 @@ $text: #ffffff;
   color:#525253
 }
 
-.back-button {
-  border-radius: 8px;
-  background-color: $primary;
-  border: none;
-  color: $text;
-  height: 30px;
-  text-align: center;
-  align-items: center;
-  text-decoration: none;
-  display: inline-flex;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.4s;
-  padding: 0 16px;
-
-&:hover,
-  &:focus {
-    color: $text;
-    transform: scale(1.1);
-  }
-
-  &:active {
-    color: $secondary;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $secondary;
-    outline-offset: 2px;
-  }
+.btn-killer {
+  all: unset
 }
 
 .all-button {

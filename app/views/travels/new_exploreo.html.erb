@@ -1,16 +1,26 @@
-<div class="container col-12">
+<div class="container col-12" data-controller="loader">
 
   <div class="row text-center my-3 header classic-text">
     <h1 class="classic-text">Do you like surprise? 🌍</h1>
   </div>
 
-<div class="row content">
-  <%= form_with url: create_exploreo_path, method: :post, local: true do |f| %>
-    <div class="d-flex justify-content-center mb-3">
-      <%= f.text_field :user_input, class: "form-control w-60", placeholder: "I would like to take a break for a few days by the seaside... " %>
+  <div id="loader" data-loader-target="loader" class="row justify-content-center my-3">
+    <div class="circle-loader">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
     </div>
-    <div class="btn-centerred">
-      <%= f.submit "Surprise me!", class: "all-button" %>
-    </div>
-  <% end %>
+  </div>
+
+  <div class="row content">
+    <%= form_with url: create_exploreo_path, method: :post, local: true do |f| %>
+      <div class="d-flex justify-content-center mb-3">
+        <%= f.text_field :user_input, class: "form-control w-60", placeholder: "I would like to take a break for a few days by the seaside... " %>
+      </div>
+      <div class="btn-centerred">
+        <%= f.submit "Surprise me!", class: "all-button", data: { action: "click->loader#displayLoader"} %>
+      </div>
+    <% end %>
+  </div>
 </div>
