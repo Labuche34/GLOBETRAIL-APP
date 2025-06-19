@@ -146,7 +146,7 @@ cancun = Stop.create!(
 # 3. Display a message 🎉
 puts "Finished! Created #{Stop.count} stops."
 
-#---------NOTES----------
+#---------NOTES ET PICTURES----------
 
 # 1. Clean the database 🗑️
 puts "Cleaning notes database..."
@@ -163,6 +163,14 @@ Note.create!(
   content: "Great city",
   stop_id: barcelona.id,
 )
+
+Spending.create!([
+  { amount_in_eur_cents:500, amount_cents: 500, category: "accommodation", stop_id: barcelona.id },
+  { amount_in_eur_cents:200, amount_cents: 200, category: "food",         stop_id: barcelona.id },
+  { amount_in_eur_cents:200, amount_cents: 200, category: "leisure",      stop_id: barcelona.id },
+  { amount_in_eur_cents:100, amount_cents: 100, category: "transport",    stop_id: barcelona.id }
+])
+
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
