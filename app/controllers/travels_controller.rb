@@ -1,6 +1,7 @@
 class TravelsController < ApplicationController
   def index
     @travels = Travel.all
+    @travels = Travel.order(departure_date: :desc)
   end
 
   def new
