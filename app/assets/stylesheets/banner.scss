@@ -43,15 +43,33 @@ $primary: #ea6900e4;
 }
 
 .merienda-font {
+  transform-origin: center;
   font-family: "Merienda", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 40px;
-  color: #fb8500;
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 1px;
+  background: linear-gradient(100deg, #fb8500 60%, #ffb703 90%, #fffbe6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow:
-    -2px -2px 0 $primary,
-     2px -2px 0 $primary,
-    -2px  2px 0 $primary,
-     2px  2px 0 $primary;
+    0 0 0.5px #f79b2b,
+    0 1px 0 #fff,
+    2px 2px 8px rgba(0,0,0,0.10),
+    0 0 8px #ffb70380;
+
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.22));
+  display: inline-block;
+  padding: 0.2em 0.7em;
+  border-radius: 2em;
+  background-origin: border-box;
+
+  transition:
+    transform 0.22s cubic-bezier(.4,2,.6,1),
+    filter 0.22s,
+    box-shadow 0.22s;
+  box-shadow: 0 2px 16px 0 rgba(251,133,0,0.09);
+}
+.merienda-font:hover {
+  filter: drop-shadow(0 12px 24px rgba(251,133,0,0.18));
+  cursor: pointer;
 }
