@@ -1,17 +1,9 @@
 <div class="container col-12">
 
   <div class="row text-center my-3 header">
-    <h1>Edit your stop</h1>
+    <h1>Add infos to <%= @stop.city.capitalize %>!</h1>
   </div>
 
-    <div class="row add-infos my-3">
-      <%= simple_form_for [@travel, @stop, @note] do |f| %>
-        <%= f.input :content %>
-        <%= f.submit "Add notes", class: "all-button" %>
-      <% end %>
-    </div>
-
-    <br>
     <div class="row add-infos my-3">
       <%= simple_form_for [@travel, @stop, @picture] do |f| %>
         <%= f.input :photos, label: "Pictures", as: :file, input_html: { multiple: true } %>
@@ -20,13 +12,23 @@
       <% end %>
     </div>
 
-    <br>
     <div class="row add-budget my-3">
       <%= simple_form_for [@travel, @stop, @spending] do |f| %>
         <%= f.input :category, label: "Spendings", placeholder:"Spending category", collection: ["Accomodation", "Food", "Leisure", "Transport"] %>
         <%= f.input :amount_cents, label: false, placeholder:"Add an amount" %>
         <%= f.submit "Add spendings", class: "all-button" %>
       <% end %>
+      <br>
+      <br>
+
+      <div class="row add-infos my-3">
+      <%= simple_form_for [@travel, @stop, @note] do |f| %>
+        <%= f.input :content %>
+        <br>
+        <br>
+        <%= f.submit "Add notes", class: "btn btn-primary button" %>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>

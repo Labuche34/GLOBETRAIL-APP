@@ -23,8 +23,8 @@ spain_travel = Travel.create!(
   country: "Spain",
   number_of_travellers: 6,
   budget: 3500,
-  departure_date: "2025-07-22",
-  return_date: "2025-07-26",
+  departure_date: "2024-07-22",
+  return_date: "2024-07-26",
   departure_city: "Marseille",
   travellers_type: "Friends"
 )
@@ -165,10 +165,10 @@ Note.create!(
 )
 
 Spending.create!([
-  { amount_in_eur_cents: 600, amount_cents: 600, category: "accommodation", stop_id: barcelona.id },
-  { amount_in_eur_cents: 250, amount_cents: 250, category: "food",         stop_id: barcelona.id },
-  { amount_in_eur_cents: 300, amount_cents: 300, category: "leisure",      stop_id: barcelona.id },
-  { amount_in_eur_cents: 250, amount_cents: 250, category: "transport",    stop_id: barcelona.id }
+  { amount_in_eur_cents: 689, amount_cents: 689, category: "accommodation", stop_id: barcelona.id },
+  { amount_in_eur_cents: 205.22, amount_cents: 205.22, category: "food",         stop_id: barcelona.id },
+  { amount_in_eur_cents: 318.40, amount_cents: 318.40, category: "leisure",      stop_id: barcelona.id },
+  { amount_in_eur_cents: 262, amount_cents: 262, category: "transport",    stop_id: barcelona.id }
 ])
 
 barcelona_picture = Picture.create!(
@@ -211,10 +211,10 @@ barcelona_picture.photos.attach(
 )
 
 Spending.create!([
-  { amount_in_eur_cents: 600, amount_cents: 600, category: "accommodation", stop_id: valencia.id },
-  { amount_in_eur_cents: 250, amount_cents: 250, category: "food",         stop_id: valencia.id },
-  { amount_in_eur_cents: 100, amount_cents: 100, category: "leisure",      stop_id: valencia.id },
-  { amount_in_eur_cents: 100, amount_cents: 100, category: "transport",    stop_id: valencia.id }
+  { amount_in_eur_cents: 690.50, amount_cents: 690.50, category: "accommodation", stop_id: valencia.id },
+  { amount_in_eur_cents: 231.15, amount_cents: 231.15, category: "food",         stop_id: valencia.id },
+  { amount_in_eur_cents: 122, amount_cents: 122, category: "leisure",      stop_id: valencia.id },
+  { amount_in_eur_cents: 301, amount_cents: 301, category: "transport",    stop_id: valencia.id }
 ])
 
 Note.create!(
