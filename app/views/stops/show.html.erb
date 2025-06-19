@@ -7,10 +7,62 @@
       data: { controller: 'redirect', action: 'change->redirect#go' } %>
       </h1>
     <p> Pictures, Notes & Spendings </p>
-
   </div>
 
-  <div class="row" style="color: #219EBC">
+  <div class="row">
+    <p style="color: #219EBC"><strong>Pictures:</strong></p>
+    <% if @stop.pictures.present? %>
+    <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% active_set = false %>
+        <% @stop.pictures.each do |picture| %>
+          <% picture.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%= 'active' unless active_set %>">
+              <% active_set = true %>
+              <div class="image-container position-relative">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "d-block mx-auto rounded", alt: "Photo #{index + 1}" %>
+                <%= button_to picture_path(picture, photo.key), method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this photo?" } }, class: "delete-photo-btn" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+                <% end %>
+              </div>
+              <% if picture.description.present? %>
+                <p class="mt-2 text-center"><%= picture.description %></p>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#photosCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#photosCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <% end %>
+  </div>
+  <br>
+
+  <div class="row">
+    <p style="color: #219EBC"><strong>Budget:</strong></p>
+    <% total = @stop.spendings.map(&:amount_cents).compact.sum %>
+    <p>Total spendings: <%= number_to_currency(total, unit: "") %>€</p>
+
+    <ul style="padding-left: 40px;" data-controller="chart" data-chart-spendings-value="<%= @stop.spendings.group(:category).sum(:amount_in_eur_cents).to_json %>" >
+      <% grouped_spendings = @stop.spendings.group_by(&:category) %>
+      <% grouped_spendings.each do |category, spendings| %>
+        <% total = spendings.map(&:amount_cents).compact.sum %>
+        <li><p><%= category.capitalize %>: <%= number_to_currency(total, unit: "") %>€</p></li>
+      <% end %>
+    <canvas id="chart" data-chart-target="chart"></canvas>
+    </ul>
+    <br>
+
+    <div class="row" style="color: #219EBC">
     <p><strong>Notes:</strong></p>
     <ul class="list-group">
       <% @stop.notes.each do |note| %>
@@ -36,61 +88,6 @@
       <% end %>
     </ul>
   </div>
-  <br>
-
-  <div class="row">
-    <p style="color: #219EBC"><strong>Pictures:</strong></p>
-
-    <% if @stop.pictures.present? %>
-    <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <% active_set = false %>
-        <% @stop.pictures.each do |picture| %>
-          <% picture.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item <%= 'active' unless active_set %>">
-              <% active_set = true %>
-              <div class="image-container position-relative">
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "d-block mx-auto rounded", alt: "Photo #{index + 1}" %>
-                <%= button_to picture_path(picture, photo.key), method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this photo?" } }, class: "delete-photo-btn" do %>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
-                <% end %>
-              </div>
-
-              <% if picture.description.present? %>
-                <p class="mt-2 text-center"><%= picture.description %></p>
-              <% end %>
-            </div>
-
-          <% end %>
-        <% end %>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#photosCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-
-      <button class="carousel-control-next" type="button" data-bs-target="#photosCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <% end %>
-  </div>
-
-  <div class="row">
-    <p style="color: #219EBC"><strong>Budget:</strong></p>
-    <% total = @stop.spendings.map(&:amount_cents).compact.sum %>
-    <p>Total spendings: <%= number_to_currency(total, unit: "") %>€</p>
-
-    <ul style="padding-left: 40px;" data-controller="chart" data-chart-spendings-value="<%= @stop.spendings.group(:category).sum(:amount_in_eur_cents).to_json %>" >
-      <% grouped_spendings = @stop.spendings.group_by(&:category) %>
-      <% grouped_spendings.each do |category, spendings| %>
-        <% total = spendings.map(&:amount_cents).compact.sum %>
-        <li><p><%= category.capitalize %>: <%= number_to_currency(total, unit: "") %>€</p></li>
-      <% end %>
-    <canvas id="chart" data-chart-target="chart"></canvas>
-    </ul>
 
  </div>
 </div>
