@@ -1,6 +1,6 @@
 <div class="page-container">
 
-  <div class="row text-center my-3" id="header">
+  <div class="row text-center my-3 classic-text" id="header">
     <h1>The world is yours !</h1>
     <p>Let's add some stops 🌍🧳✈️</p>
   </div>
@@ -25,9 +25,9 @@
       </div>
       <br>
 
-      <div class="row">
+      <div class="row classic-text">
         <p><strong>Stops</strong></p>
-        <ul class="list-group">
+        <ul class="list-group classic-text">
           <% @travel.stops.each do |stop| %>
             <li class="list-group-item stop-card d-flex justify-content-between align-items-center" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0;">
               <span><%= stop.city.capitalize %></span>
