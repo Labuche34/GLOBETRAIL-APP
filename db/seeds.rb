@@ -22,7 +22,7 @@ spain_travel = Travel.create!(
   user_id: user_1.id,
   country: "Spain",
   number_of_travellers: 6,
-  budget: 1000,
+  budget: 3500,
   departure_date: "2025-07-22",
   return_date: "2025-07-26",
   departure_city: "Marseille",
@@ -165,12 +165,11 @@ Note.create!(
 )
 
 Spending.create!([
-  { amount_in_eur_cents:500, amount_cents: 500, category: "accommodation", stop_id: barcelona.id },
-  { amount_in_eur_cents:200, amount_cents: 200, category: "food",         stop_id: barcelona.id },
-  { amount_in_eur_cents:200, amount_cents: 200, category: "leisure",      stop_id: barcelona.id },
-  { amount_in_eur_cents:100, amount_cents: 100, category: "transport",    stop_id: barcelona.id }
+  { amount_in_eur_cents: 600, amount_cents: 600, category: "accommodation", stop_id: barcelona.id },
+  { amount_in_eur_cents: 250, amount_cents: 250, category: "food",         stop_id: barcelona.id },
+  { amount_in_eur_cents: 300, amount_cents: 300, category: "leisure",      stop_id: barcelona.id },
+  { amount_in_eur_cents: 250, amount_cents: 250, category: "transport",    stop_id: barcelona.id }
 ])
-
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
@@ -184,6 +183,25 @@ barcelona_picture.photos.attach(
 
 barcelona_picture = Picture.create!(
   stop: barcelona,
+  description: "Beaches"
+)
+
+barcelona_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1534001265532-393289eb8ed3?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "barcelona.jpg"
+)
+
+barcelona_picture = Picture.create!(
+  stop: barcelona,
+  description: "Museum"
+)
+
+barcelona_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1630219694734-fe47ab76b15e?q=80&w=1952&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "barcelona.jpg"
+)
+barcelona_picture = Picture.create!(
+  stop: barcelona,
   description: "Beautiful view !"
 )
 
@@ -192,17 +210,17 @@ barcelona_picture.photos.attach(
   filename: "barcelona.jpg"
 )
 
+Spending.create!([
+  { amount_in_eur_cents: 600, amount_cents: 600, category: "accommodation", stop_id: valencia.id },
+  { amount_in_eur_cents: 250, amount_cents: 250, category: "food",         stop_id: valencia.id },
+  { amount_in_eur_cents: 100, amount_cents: 100, category: "leisure",      stop_id: valencia.id },
+  { amount_in_eur_cents: 100, amount_cents: 100, category: "transport",    stop_id: valencia.id }
+])
+
 Note.create!(
   content: "Relaxing city",
   stop_id: valencia.id,
 )
-
-Spending.create!([
-  { amount_in_eur_cents:500, amount_cents: 500, category: "accommodation", stop_id: valencia.id },
-  { amount_in_eur_cents:200, amount_cents: 200, category: "food",         stop_id: valencia.id },
-  { amount_in_eur_cents:200, amount_cents: 200, category: "leisure",      stop_id: valencia.id },
-  { amount_in_eur_cents:100, amount_cents: 100, category: "transport",    stop_id: valencia.id }
-])
 
 valencia_picture = Picture.create!(
   stop: valencia,
@@ -211,6 +229,26 @@ valencia_picture = Picture.create!(
 
 valencia_picture.photos.attach(
   io: URI.open("https://images.unsplash.com/photo-1736685103486-0e70de4963ca?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "valencia.jpg"
+)
+
+valencia_picture = Picture.create!(
+  stop: valencia,
+  description: "Love garden!"
+)
+
+valencia_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1736685103910-dafe7a52cb6c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+  filename: "valencia.jpg"
+)
+
+valencia_picture = Picture.create!(
+  stop: valencia,
+  description: "Walking"
+)
+
+valencia_picture.photos.attach(
+  io: URI.open("https://images.unsplash.com/photo-1736685102549-9f184ec1735d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
   filename: "valencia.jpg"
 )
 
