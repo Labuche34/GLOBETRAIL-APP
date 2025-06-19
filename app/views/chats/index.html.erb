@@ -11,7 +11,7 @@
         <% @chats.each do |chat| %>
           <li class="list-group-item d-flex justify-content-between align-items-center classic-text">
             <%= link_to chat.title, travel_chat_path(@travel, chat), class: "stretched-link text-decoration-none text-dark classic-text" %>
-            <span class="badge rounded-pill link-btn classic-text"><%= chat.messages.where(role:"user").count %> messages</span>
+            <span class="badge rounded-pill link-btn"><%= chat.messages.where(role:"user").count %> messages</span>
           </li>
         <% end %>
       </ul>
@@ -24,8 +24,10 @@
 
   <div class="d-flex justify-content-center mt-3 link">
     <%= simple_form_for [@travel, @chat] do |f| %>
-      <%= f.button :submit, "New chat", class: "all-button" %>
+    <div class="btn-centerred">
+      <%= f.submit "New chat", class: "all-button" %>
     <% end %>
+    </div>
   </div>
 
 </div>
