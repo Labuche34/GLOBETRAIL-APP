@@ -1,0 +1,58 @@
+#loader{
+  width:100%;
+  height:40vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  display: none;;
+}
+.circle-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  border: 3.5px solid transparent;
+  border-radius: 50%;
+  animation: rotate 4s infinite ease-in-out;
+}
+
+.circle-1 {
+  width: 250px;
+  height: 250px;
+  border-top-color: rgb(33, 158, 188);
+  border-right-color: rgb(54, 151, 176);
+  animation-delay: -0.15s;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  border-top-color: #6283a9;
+  border-right-color: #3f96b3;
+  animation-delay: -0.3s;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  border-top-color: rgb(33, 158, 188);
+  border-right-color: rgb(87, 158, 176);
+  animation-delay: -0.45s;
+}
+
+.circle-4 {
+  width: 100px;
+  height: 100px;
+  border-top-color: #404041;
+  border-right-color: #404041;
+  animation-delay: -0.6s;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
