@@ -1,6 +1,6 @@
 <div class="container col-12">
   <div class="row text-center my-3">
-    <h1><label for="city_select">☀️ All your memories from <%= @stop.city.capitalize %>☀️<br><br>
+    <h1><label for="city_select">All your memories from <br>☀️ <%= @stop.city.capitalize %> ☀️<br><br>
     <%= select_tag :link_picker,
       options_for_select(@stop.travel.stops.map { |a| [a.city.capitalize, stop_path(a)] }),
       include_blank: 'Choose the city',
@@ -11,7 +11,7 @@
   </div>
 
   <div class="row" style="color: #219EBC">
-    <p><strong>Notes :</strong></p>
+    <p><strong>Notes:</strong></p>
     <ul class="list-group">
       <% @stop.notes.each do |note| %>
         <li class="list-group-item" style="font-size: 16px; font-weight: bold; margin-bottom: 8px; margin-top: 0; margin-right: 0; color: #219ebc;">
@@ -38,14 +38,17 @@
   </div>
   <br>
 
-  <div class="row" style="color: #219EBC">
-    <p><strong>Pictures :</strong></p>
+  <div class="row">
+    <p style="color: #219EBC"><strong>Pictures:</strong></p>
 
+    <% if @stop.pictures.present? %>
     <div id="photosCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
+        <% active_set = false %>
         <% @stop.pictures.each do |picture| %>
           <% picture.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="carousel-item <%= 'active' unless active_set %>">
+              <% active_set = true %>
               <div class="image-container position-relative">
                 <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "d-block mx-auto rounded", alt: "Photo #{index + 1}" %>
                 <%= button_to picture_path(picture, photo.key), method: :delete, form: { data: { turbo_confirm: "Are you sure you want to delete this photo?" } }, class: "delete-photo-btn" do %>
@@ -72,11 +75,22 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
- </div>
+    <% end %>
+  </div>
 
- <div class="row" style="color: #219EBC">
-    <p><strong>Budget:</strong></p>
+  <div class="row">
+    <p style="color: #219EBC"><strong>Budget:</strong></p>
+    <% total = @stop.spendings.map(&:amount_in_eur_cents).compact.sum %>
+    <p>Total spendings: <%= number_to_currency(total, unit: "") %>€</p>
 
+    <ul style="padding-left: 40px;" data-controller="chart" data-chart-spendings-value="<%= @stop.spendings.group(:category).sum(:amount_in_eur_cents).to_json %>" >
+      <% grouped_spendings = @stop.spendings.group_by(&:category) %>
+      <% grouped_spendings.each do |category, spendings| %>
+        <% total = spendings.map(&:amount_in_eur_cents).compact.sum %>
+        <li><p><%= category %>: <%= number_to_currency(total, unit: "") %>€</p></li>
+      <% end %>
+    <canvas id="chart" data-chart-target="chart"></canvas>
+    </ul>
 
  </div>
 </div>

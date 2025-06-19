@@ -7,6 +7,9 @@ class Travel < ApplicationRecord
   has_one_attached :photo
   after_create_commit :attach_image_to_place
 
+  geocoded_by :country
+  after_validation :geocode, if: :will_save_change_to_country?
+
   def attach_image_to_place
     country_name = self.country
     image_url = fetch_image_url
