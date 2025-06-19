@@ -1,3 +1,5 @@
+$primary: #ea6900e4;
+
 .banner {
   justify-content: space-between;
   background: white;
@@ -47,4 +49,9 @@
   font-style: normal;
   font-size: 40px;
   color: #fb8500;
+  text-shadow:
+    -2px -2px 0 $primary,
+     2px -2px 0 $primary,
+    -2px  2px 0 $primary,
+     2px  2px 0 $primary;
 }

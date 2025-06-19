@@ -1,5 +1,5 @@
 <h1><%= @travel.country %></h1>
-<div id="output" class="markdown-content">
+<div id="output" class="markdown-content classic-text">
   <% @messages.each do |message| %>
     <p>
       <strong><%= render_markdown(message.content).html_safe %></strong>

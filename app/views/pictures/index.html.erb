@@ -1,18 +1,18 @@
 <div class="container col-12">
   <div class="row text-center my-3">
-    <h1><label for="city_select">☀️ All your memories from </label>
+    <h1 class="classic-text"><label for="city_select">☀️ All your memories from </label>
       <select id="city_select" name="stop_id">
       <% @travel.stops.each do |stop| %>
         <option value="<%= stop.id %>"><strong><%= stop.city.capitalize %></strong></option>
       <% end %>
       </select>
     ☀️</h1>
-    <p> Pictures, Notes & Spendings </p>
+    <p class="classic-text"> Pictures, Notes & Spendings </p>
 
   </div>
 
   <div class="row" style="color: #219EBC">
-    <p><strong>Notes :</strong></p>
+    <p class="classic-text"><strong>Notes :</strong></p>
     <div>
       <% @stop.notes.each do |note| %>
 

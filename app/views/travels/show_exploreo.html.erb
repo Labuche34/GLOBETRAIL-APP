@@ -1,6 +1,6 @@
 <div id="output" class="markdown-content">
   <% @assistant_messages.each do |msg| %>
-    <div class="markdown-content exploreo-response-container">
+    <div class="markdown-content exploreo-response-container classic-text">
       <%= render_markdown(msg.content).html_safe %>
     </div>
   <% end %>

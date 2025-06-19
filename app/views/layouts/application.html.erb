@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GlobetrailApp</title>
+    <title>🌎 GlobetrailApp 🌎</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +13,12 @@
   </head>
 
   <body>
-
+    <style>
+      body {
+        background-color:rgba(253, 249, 249, 0.96);
+        color:#525253
+      }
+    </style>
     <div class="banner banner-bg" style="background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(219, 216, 216, 0.4)), url(https://cdn.prod.website-files.com/6376980d89260e9c2cdee566/64df81d6200a0e03c45e823a_famous-buildings-round-the-world-travel-wallpaper.jpg)">
       <%= link_to travels_path, class: "text-decoration-none text-dark" do %>
         <h2 class="merienda-font m-0 text-center banner-title">GlobeTrail</h2>
