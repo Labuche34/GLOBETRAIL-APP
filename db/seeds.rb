@@ -197,6 +197,13 @@ Note.create!(
   stop_id: valencia.id,
 )
 
+Spending.create!([
+  { amount_in_eur_cents:500, amount_cents: 500, category: "accommodation", stop_id: valencia.id },
+  { amount_in_eur_cents:200, amount_cents: 200, category: "food",         stop_id: valencia.id },
+  { amount_in_eur_cents:200, amount_cents: 200, category: "leisure",      stop_id: valencia.id },
+  { amount_in_eur_cents:100, amount_cents: 100, category: "transport",    stop_id: valencia.id }
+])
+
 valencia_picture = Picture.create!(
   stop: valencia,
   description: "family walk"
