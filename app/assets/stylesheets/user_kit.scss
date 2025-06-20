@@ -41,3 +41,7 @@ $text: #ffffff;
     outline-offset: 2px;
   }
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
